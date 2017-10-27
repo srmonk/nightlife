@@ -1,0 +1,2368 @@
+@prefix : <http://www.semanticweb.org/shart/ontologies/nightlife##> .
+@prefix nl: <http://www.semanticweb.org/shart/ontologies/nightlife#> .
+@prefix nl2: <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.semanticweb.org/shart/ontologies/nightlife#> a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Adres
+
+nl:Adres a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#City
+
+nl:City a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Latitude
+
+nl:Latitude a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Locatienaam
+
+nl:Locatienaam a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#LongdesEN
+
+nl:LongdesEN a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Longitude
+
+nl:Longitude a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Media
+
+nl:Media a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ShortdesEN
+
+nl:ShortdesEN a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TitleEN
+
+nl:TitleEN a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Url
+
+nl:Url a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Zipcode
+
+nl:Zipcode a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#calendar
+
+nl:calendar a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#longdesc
+
+nl:longdesc a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#shortdesc
+
+nl:shortdesc a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#trcid
+
+nl:trcid a owl:AnnotationProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#LocatedIn
+
+nl2:LocatedIn a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Nearby
+
+nl2:Nearby a owl:ObjectProperty , owl:TransitiveProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#PlaysMusic
+
+nl2:PlaysMusic a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Sells
+
+nl2:Sells a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#ServesDrink
+
+nl2:ServesDrink a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#TargetedAudienceIs
+
+nl2:TargetedAudienceIs a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#hasCrowdLevel
+
+nl2:hasCrowdLevel a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#hasTicketPrice
+
+nl2:hasTicketPrice a owl:ObjectProperty , owl:FunctionalProperty .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#isPricedAt
+
+nl:isPricedAt a owl:ObjectProperty , owl:FunctionalProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#GayBar
+
+nl2:GayBar a owl:Class ;
+	owl:equivalentClass _:genid1 .
+
+_:genid1 owl:intersectionOf _:genid4 .
+
+_:genid4 a rdf:List ;
+	rdf:first nl:Bar ;
+	rdf:rest _:genid2 .
+
+_:genid2 a rdf:List ;
+	rdf:first _:genid3 .
+
+_:genid3 a owl:Restriction ;
+	owl:onProperty nl2:TargetedAudienceIs ;
+	owl:someValuesFrom nl:Gay .
+
+_:genid2 rdf:rest rdf:nil .
+
+_:genid1 a owl:Class .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#JazzBar
+
+nl2:JazzBar a owl:Class ;
+	owl:equivalentClass _:genid5 .
+
+_:genid5 owl:intersectionOf _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first nl:Bar ;
+	rdf:rest _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first _:genid7 .
+
+_:genid7 a owl:Restriction ;
+	owl:onProperty nl2:PlaysMusic ;
+	owl:someValuesFrom nl:SoftMusic .
+
+_:genid6 rdf:rest rdf:nil .
+
+_:genid5 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#AlcoholicDrinks
+
+nl:AlcoholicDrinks a owl:Class ;
+	rdfs:subClassOf nl:Drinks ;
+	owl:disjointWith nl:Non-alcoholicDrinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Bar
+
+nl:Bar a owl:Class ;
+	owl:equivalentClass _:genid9 .
+
+_:genid9 owl:intersectionOf _:genid14 .
+
+_:genid14 a rdf:List ;
+	rdf:first nl:HangoutSpots ;
+	rdf:rest _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first _:genid13 .
+
+_:genid13 a owl:Restriction ;
+	owl:onProperty nl2:ServesDrink ;
+	owl:someValuesFrom nl:Drinks .
+
+_:genid12 rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first _:genid11 .
+
+_:genid11 a owl:Restriction ;
+	owl:onProperty nl2:hasCrowdLevel ;
+	owl:someValuesFrom nl:Normal .
+
+_:genid10 rdf:rest rdf:nil .
+
+_:genid9 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Beverages
+
+nl:Beverages a owl:Class ;
+	rdfs:subClassOf nl:AlcoholicDrinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#CoffeeShop
+
+nl:CoffeeShop a owl:Class ;
+	owl:equivalentClass _:genid15 .
+
+_:genid15 owl:intersectionOf _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first nl:HangoutSpots ;
+	rdf:rest _:genid16 .
+
+_:genid16 a rdf:List ;
+	rdf:first _:genid17 .
+
+_:genid17 a owl:Restriction ;
+	owl:onProperty nl2:Sells ;
+	owl:someValuesFrom nl:Drugs .
+
+_:genid16 rdf:rest rdf:nil .
+
+_:genid15 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ColdDrinks
+
+nl:ColdDrinks a owl:Class ;
+	rdfs:subClassOf nl:Non-alcoholicDrinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Crowd
+
+nl:Crowd a owl:Class ;
+	rdfs:subClassOf nl:Levels .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Drinks
+
+nl:Drinks a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Drugs
+
+nl:Drugs a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Gay
+
+nl:Gay a owl:Class ;
+	rdfs:subClassOf nl:TargetedAudience .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#GayClub
+
+nl:GayClub a owl:Class ;
+	owl:equivalentClass _:genid19 .
+
+_:genid19 owl:intersectionOf _:genid22 .
+
+_:genid22 a rdf:List ;
+	rdf:first nl:Nightclub ;
+	rdf:rest _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first _:genid21 .
+
+_:genid21 a owl:Restriction ;
+	owl:onProperty nl2:TargetedAudienceIs ;
+	owl:someValuesFrom nl:Gay .
+
+_:genid20 rdf:rest rdf:nil .
+
+_:genid19 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#HangoutSpots
+
+nl:HangoutSpots a owl:Class ;
+	owl:equivalentClass _:genid23 .
+
+_:genid23 a owl:Restriction ;
+	owl:onProperty nl2:hasCrowdLevel ;
+	owl:someValuesFrom nl:Crowd .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#HotDrinks
+
+nl:HotDrinks a owl:Class ;
+	rdfs:subClassOf nl:Non-alcoholicDrinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Levels
+
+nl:Levels a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#LoudMusic
+
+nl:LoudMusic a owl:Class ;
+	rdfs:subClassOf nl:Music .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Music
+
+nl:Music a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Nightclub
+
+nl:Nightclub a owl:Class ;
+	owl:equivalentClass _:genid24 .
+
+_:genid24 owl:intersectionOf _:genid29 .
+
+_:genid29 a rdf:List ;
+	rdf:first nl:HangoutSpots ;
+	rdf:rest _:genid27 .
+
+_:genid27 a rdf:List ;
+	rdf:first _:genid28 .
+
+_:genid28 a owl:Restriction ;
+	owl:onProperty nl2:hasCrowdLevel ;
+	owl:someValuesFrom nl:Packed .
+
+_:genid27 rdf:rest _:genid25 .
+
+_:genid25 a rdf:List ;
+	rdf:first _:genid26 .
+
+_:genid26 a owl:Restriction ;
+	owl:onProperty nl2:hasTicketPrice ;
+	owl:someValuesFrom nl:Prices .
+
+_:genid25 rdf:rest rdf:nil .
+
+_:genid24 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Non-alcoholicDrinks
+
+nl:Non-alcoholicDrinks a owl:Class ;
+	rdfs:subClassOf nl:Drinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Normal
+
+nl:Normal a owl:Class ;
+	rdfs:subClassOf nl:Crowd .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Packed
+
+nl:Packed a owl:Class ;
+	rdfs:subClassOf nl:Crowd .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Prices
+
+nl:Prices a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Quite
+
+nl:Quite a owl:Class ;
+	rdfs:subClassOf nl:Crowd .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#RandB
+
+nl:RandB a owl:Class ;
+	rdfs:subClassOf nl:LoudMusic .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#RandBclub
+
+nl:RandBclub a owl:Class ;
+	owl:equivalentClass _:genid30 .
+
+_:genid30 owl:intersectionOf _:genid33 .
+
+_:genid33 a rdf:List ;
+	rdf:first nl:Nightclub ;
+	rdf:rest _:genid31 .
+
+_:genid31 a rdf:List ;
+	rdf:first _:genid32 .
+
+_:genid32 a owl:Restriction ;
+	owl:onProperty nl2:PlaysMusic ;
+	owl:someValuesFrom nl:RandB .
+
+_:genid31 rdf:rest rdf:nil .
+
+_:genid30 a owl:Class .
+
+nl:RandBclub rdfs:subClassOf nl:Nightclub .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Shots
+
+nl:Shots a owl:Class ;
+	rdfs:subClassOf nl:AlcoholicDrinks .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#SoftMusic
+
+nl:SoftMusic a owl:Class ;
+	rdfs:subClassOf nl:Music .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TargetedAudience
+
+nl:TargetedAudience a owl:Class ;
+	rdfs:subClassOf nl:Levels .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Techno
+
+nl:Techno a owl:Class ;
+	rdfs:subClassOf nl:LoudMusic .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TechnoClub
+
+nl:TechnoClub a owl:Class ;
+	owl:equivalentClass _:genid34 .
+
+_:genid34 owl:intersectionOf _:genid37 .
+
+_:genid37 a rdf:List ;
+	rdf:first nl:Nightclub ;
+	rdf:rest _:genid35 .
+
+_:genid35 a rdf:List ;
+	rdf:first _:genid36 .
+
+_:genid36 a owl:Restriction ;
+	owl:onProperty nl2:PlaysMusic ;
+	owl:someValuesFrom nl:Techno .
+
+_:genid35 rdf:rest rdf:nil .
+
+_:genid34 a owl:Class .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Zones
+
+nl:Zones a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://dbpedia.org/resource/Accelerade
+
+<http://dbpedia.org/resource/Accelerade> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Admiralenbuurt
+
+<http://dbpedia.org/resource/Admiralenbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Aguapanela
+
+<http://dbpedia.org/resource/Aguapanela> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Aguas_frescas
+
+<http://dbpedia.org/resource/Aguas_frescas> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Alcohol-free_bar
+
+<http://dbpedia.org/resource/Alcohol-free_bar> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Almdudler
+
+<http://dbpedia.org/resource/Almdudler> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Amsteldorp
+
+<http://dbpedia.org/resource/Amsteldorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-Centrum
+
+<http://dbpedia.org/resource/Amsterdam-Centrum> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-Noord
+
+<http://dbpedia.org/resource/Amsterdam-Noord> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-Oost
+
+<http://dbpedia.org/resource/Amsterdam-Oost> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-West
+
+<http://dbpedia.org/resource/Amsterdam-West> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-Zuid
+
+<http://dbpedia.org/resource/Amsterdam-Zuid> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam-Zuidoost
+
+<http://dbpedia.org/resource/Amsterdam-Zuidoost> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam_Nieuw-West
+
+<http://dbpedia.org/resource/Amsterdam_Nieuw-West> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Amsterdam_Oud-West
+
+<http://dbpedia.org/resource/Amsterdam_Oud-West> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Apfelschorle
+
+<http://dbpedia.org/resource/Apfelschorle> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Apollobuurt
+
+<http://dbpedia.org/resource/Apollobuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Apple_cider
+
+<http://dbpedia.org/resource/Apple_cider> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Atole
+
+<http://dbpedia.org/resource/Atole> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Baesuk
+
+<http://dbpedia.org/resource/Baesuk> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bandrek
+
+<http://dbpedia.org/resource/Bandrek> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Barley_water
+
+<http://dbpedia.org/resource/Barley_water> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bavaria_non-alcoholic_beer
+
+<http://dbpedia.org/resource/Bavaria_non-alcoholic_beer> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bengal_Punch
+
+<http://dbpedia.org/resource/Bengal_Punch> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Betondorp
+
+<http://dbpedia.org/resource/Betondorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Beverage_Digest
+
+<http://dbpedia.org/resource/Beverage_Digest> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bijlmermeer
+
+<http://dbpedia.org/resource/Bijlmermeer> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Birch_sap
+
+<http://dbpedia.org/resource/Birch_sap> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bl�b�rssoppa
+
+<http://dbpedia.org/resource/Bl�b�rssoppa> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bonjus
+
+<http://dbpedia.org/resource/Bonjus> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bos_en_Lommer
+
+<http://dbpedia.org/resource/Bos_en_Lommer> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Brottrunk
+
+<http://dbpedia.org/resource/Brottrunk> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Buiksloot
+
+<http://dbpedia.org/resource/Buiksloot> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Buikslotermeer
+
+<http://dbpedia.org/resource/Buikslotermeer> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Buitenveldert
+
+<http://dbpedia.org/resource/Buitenveldert> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Bullewijk
+
+<http://dbpedia.org/resource/Bullewijk> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Bundaberg_Brewed_Drinks
+
+<http://dbpedia.org/resource/Bundaberg_Brewed_Drinks> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Burgwallen_Nieuwe_Zijde
+
+<http://dbpedia.org/resource/Burgwallen_Nieuwe_Zijde> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Burgwallen_Oude_Zijde
+
+<http://dbpedia.org/resource/Burgwallen_Oude_Zijde> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Burple
+
+<http://dbpedia.org/resource/Burple> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Cascade_Beverages
+
+<http://dbpedia.org/resource/Cascade_Beverages> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Cendol
+
+<http://dbpedia.org/resource/Cendol> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Chaas
+
+<http://dbpedia.org/resource/Chaas> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Chalap
+
+<http://dbpedia.org/resource/Chalap> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Chamoyada
+
+<http://dbpedia.org/resource/Chamoyada> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Champurrado
+
+<http://dbpedia.org/resource/Champurrado> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Champ�s
+
+<http://dbpedia.org/resource/Champ�s> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Chapo
+
+<http://dbpedia.org/resource/Chapo> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Chass�buurt
+
+<http://dbpedia.org/resource/Chass�buurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Cholado
+
+<http://dbpedia.org/resource/Cholado> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Coors_Cutter
+
+<http://dbpedia.org/resource/Coors_Cutter> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Crodino
+
+<http://dbpedia.org/resource/Crodino> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Cruquiuseiland
+
+<http://dbpedia.org/resource/Cruquiuseiland> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Crystal_Light
+
+<http://dbpedia.org/resource/Crystal_Light> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Czaar_Peterbuurt
+
+<http://dbpedia.org/resource/Czaar_Peterbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Dapperbuurt
+
+<http://dbpedia.org/resource/Dapperbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/De_Aker
+
+<http://dbpedia.org/resource/De_Aker> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/De_Baarsjes
+
+<http://dbpedia.org/resource/De_Baarsjes> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/De_Pijp
+
+<http://dbpedia.org/resource/De_Pijp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Durgerdam
+
+<http://dbpedia.org/resource/Durgerdam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Eastern_Docklands
+
+<http://dbpedia.org/resource/Eastern_Docklands> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Egg_cream
+
+<http://dbpedia.org/resource/Egg_cream> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Eghajira
+
+<http://dbpedia.org/resource/Eghajira> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Elderflower_cordial
+
+<http://dbpedia.org/resource/Elderflower_cordial> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Elderflower_press�
+
+<http://dbpedia.org/resource/Elderflower_press�> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Enviga
+
+<http://dbpedia.org/resource/Enviga> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Es_bir
+
+<http://dbpedia.org/resource/Es_bir> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Floradorp
+
+<http://dbpedia.org/resource/Floradorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Frederik_Hendrikbuurt
+
+<http://dbpedia.org/resource/Frederik_Hendrikbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Froster
+
+<http://dbpedia.org/resource/Froster> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Frozen_carbonated_beverage
+
+<http://dbpedia.org/resource/Frozen_carbonated_beverage> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Gaasperdam
+
+<http://dbpedia.org/resource/Gaasperdam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Geuzenveld
+
+<http://dbpedia.org/resource/Geuzenveld> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Geuzenveld-Slotermeer
+
+<http://dbpedia.org/resource/Geuzenveld-Slotermeer> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Ginger_tea
+
+<http://dbpedia.org/resource/Ginger_tea> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Grass_jelly
+
+<http://dbpedia.org/resource/Grass_jelly> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Health_shake
+
+<http://dbpedia.org/resource/Health_shake> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Hoofddorppleinbuurt
+
+<http://dbpedia.org/resource/Hoofddorppleinbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Horchata
+
+<http://dbpedia.org/resource/Horchata> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Hot_chocolate
+
+<http://dbpedia.org/resource/Hot_chocolate> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Hwachae
+
+<http://dbpedia.org/resource/Hwachae> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/IJburg
+
+<http://dbpedia.org/resource/IJburg> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Indische_Buurt
+
+<http://dbpedia.org/resource/Indische_Buurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Jallab
+
+<http://dbpedia.org/resource/Jallab> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Java-eiland
+
+<http://dbpedia.org/resource/Java-eiland> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Jindallae_hwachae
+
+<http://dbpedia.org/resource/Jindallae_hwachae> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Jodenbuurt
+
+<http://dbpedia.org/resource/Jodenbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Jordaan
+
+<http://dbpedia.org/resource/Jordaan> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Julmust
+
+<http://dbpedia.org/resource/Julmust> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/KNSM_Island
+
+<http://dbpedia.org/resource/KNSM_Island> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Kadijken
+
+<http://dbpedia.org/resource/Kadijken> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Kinkerbuurt
+
+<http://dbpedia.org/resource/Kinkerbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Kristian_Regale
+
+<http://dbpedia.org/resource/Kristian_Regale> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Landelijk_Noord
+
+<http://dbpedia.org/resource/Landelijk_Noord> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Landlust
+
+<http://dbpedia.org/resource/Landlust> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Lastage
+
+<http://dbpedia.org/resource/Lastage> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Licuado
+
+<http://dbpedia.org/resource/Licuado> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Low-alcohol_beer
+
+<http://dbpedia.org/resource/Low-alcohol_beer> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Malt_beer
+
+<http://dbpedia.org/resource/Malt_beer> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Malvern_water
+
+<http://dbpedia.org/resource/Malvern_water> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Matte_Le�o
+
+<http://dbpedia.org/resource/Matte_Le�o> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Mazamorra
+
+<http://dbpedia.org/resource/Mazamorra> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/MiO
+
+<http://dbpedia.org/resource/MiO> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Middelveldsche_Akerpolder
+
+<http://dbpedia.org/resource/Middelveldsche_Akerpolder> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Milk
+
+<http://dbpedia.org/resource/Milk> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Milkshake
+
+<http://dbpedia.org/resource/Milkshake> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Mocochinchi
+
+<http://dbpedia.org/resource/Mocochinchi> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Mote_con_huesillo
+
+<http://dbpedia.org/resource/Mote_con_huesillo> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Near_beer
+
+<http://dbpedia.org/resource/Near_beer> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Neera
+
+<http://dbpedia.org/resource/Neera> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Negen_Straatjes
+
+<http://dbpedia.org/resource/Negen_Straatjes> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Nesher_Malt
+
+<http://dbpedia.org/resource/Nesher_Malt> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Nestea
+
+<http://dbpedia.org/resource/Nestea> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Nieuw_Sloten
+
+<http://dbpedia.org/resource/Nieuw_Sloten> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Nieuwe_Pijp
+
+<http://dbpedia.org/resource/Nieuwe_Pijp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Nieuwendam
+
+<http://dbpedia.org/resource/Nieuwendam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Nieuwendammerdijk_en_Buiksloterdijk
+
+<http://dbpedia.org/resource/Nieuwendammerdijk_en_Buiksloterdijk> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Non-alcoholic_beverage
+
+<http://dbpedia.org/resource/Non-alcoholic_beverage> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Non-alcoholic_mixed_drink
+
+<http://dbpedia.org/resource/Non-alcoholic_mixed_drink> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Nutrimato
+
+<http://dbpedia.org/resource/Nutrimato> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Olympisch_Kwartier
+
+<http://dbpedia.org/resource/Olympisch_Kwartier> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oostelijke_Eilanden
+
+<http://dbpedia.org/resource/Oostelijke_Eilanden> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oosterdokseiland
+
+<http://dbpedia.org/resource/Oosterdokseiland> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oostoever
+
+<http://dbpedia.org/resource/Oostoever> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oostzanerwerf
+
+<http://dbpedia.org/resource/Oostzanerwerf> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Orange_Whip
+
+<http://dbpedia.org/resource/Orange_Whip> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Orange_drink
+
+<http://dbpedia.org/resource/Orange_drink> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Orange_soft_drink
+
+<http://dbpedia.org/resource/Orange_soft_drink> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Osdorp
+
+<http://dbpedia.org/resource/Osdorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oud_Osdorp
+
+<http://dbpedia.org/resource/Oud_Osdorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oude_Pijp
+
+<http://dbpedia.org/resource/Oude_Pijp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Overhoeks
+
+<http://dbpedia.org/resource/Overhoeks> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Overtoombuurt
+
+<http://dbpedia.org/resource/Overtoombuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Overtoomse_Veld
+
+<http://dbpedia.org/resource/Overtoomse_Veld> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Peanut_milk
+
+<http://dbpedia.org/resource/Peanut_milk> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Peanut_punch
+
+<http://dbpedia.org/resource/Peanut_punch> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Pinol
+
+<http://dbpedia.org/resource/Pinol> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Podpiwek
+
+<http://dbpedia.org/resource/Podpiwek> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Powerade
+
+<http://dbpedia.org/resource/Powerade> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Prinses_Irenebuurt
+
+<http://dbpedia.org/resource/Prinses_Irenebuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Propel_Fitness_Water
+
+<http://dbpedia.org/resource/Propel_Fitness_Water> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/RAC_124
+
+<http://dbpedia.org/resource/RAC_124> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Randstad
+
+<http://dbpedia.org/resource/Randstad> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Ransdorp
+
+<http://dbpedia.org/resource/Ransdorp> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Red_espresso
+
+<http://dbpedia.org/resource/Red_espresso> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Rieteilanden
+
+<http://dbpedia.org/resource/Rieteilanden> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Robby_Bubble
+
+<http://dbpedia.org/resource/Robby_Bubble> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Rooh_Afza
+
+<http://dbpedia.org/resource/Rooh_Afza> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sangria_Se�orial
+
+<http://dbpedia.org/resource/Sangria_Se�orial> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sbiten
+
+<http://dbpedia.org/resource/Sbiten> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Schinkelbuurt
+
+<http://dbpedia.org/resource/Schinkelbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Sharbat
+
+<http://dbpedia.org/resource/Sharbat> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Shikanjvi
+
+<http://dbpedia.org/resource/Shikanjvi> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Slotermeer
+
+<http://dbpedia.org/resource/Slotermeer> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Slow_Cow
+
+<http://dbpedia.org/resource/Slow_Cow> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Slurpee
+
+<http://dbpedia.org/resource/Slurpee> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Slush_Puppie
+
+<http://dbpedia.org/resource/Slush_Puppie> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Smoothie
+
+<http://dbpedia.org/resource/Smoothie> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Spaarndammerbuurt
+
+<http://dbpedia.org/resource/Spaarndammerbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Special_K
+
+<http://dbpedia.org/resource/Special_K> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sports_drink
+
+<http://dbpedia.org/resource/Sports_drink> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Stadionbuurt
+
+<http://dbpedia.org/resource/Stadionbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Staminade
+
+<http://dbpedia.org/resource/Staminade> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Steigereiland
+
+<http://dbpedia.org/resource/Steigereiland> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Subak_hwachae
+
+<http://dbpedia.org/resource/Subak_hwachae> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Suero_Oral
+
+<http://dbpedia.org/resource/Suero_Oral> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sugarcane_juice
+
+<http://dbpedia.org/resource/Sugarcane_juice> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sujeonggwa
+
+<http://dbpedia.org/resource/Sujeonggwa> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Superdrink
+
+<http://dbpedia.org/resource/Superdrink> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Supermalt
+
+<http://dbpedia.org/resource/Supermalt> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Sustagen
+
+<http://dbpedia.org/resource/Sustagen> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Switchel
+
+<http://dbpedia.org/resource/Switchel> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Thadal
+
+<http://dbpedia.org/resource/Thadal> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Three_Legs_Cooling_Water
+
+<http://dbpedia.org/resource/Three_Legs_Cooling_Water> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Trompbuurt
+
+<http://dbpedia.org/resource/Trompbuurt> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Tuindorp_Nieuwendam
+
+<http://dbpedia.org/resource/Tuindorp_Nieuwendam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Tuindorp_Oostzaan
+
+<http://dbpedia.org/resource/Tuindorp_Oostzaan> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Venserpolder
+
+<http://dbpedia.org/resource/Venserpolder> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Vitamalt
+
+<http://dbpedia.org/resource/Vitamalt> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Vodka
+
+<http://dbpedia.org/resource/Vodka> a owl:NamedIndividual , nl:Beverages .
+# 
+# http://dbpedia.org/resource/Wedang_Jahe
+
+<http://dbpedia.org/resource/Wedang_Jahe> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Westelijk_Havengebied
+
+<http://dbpedia.org/resource/Westelijk_Havengebied> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Westelijke_Tuinsteden
+
+<http://dbpedia.org/resource/Westelijke_Tuinsteden> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Westpoort
+
+<http://dbpedia.org/resource/Westpoort> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Wine
+
+<http://dbpedia.org/resource/Wine> a owl:NamedIndividual , nl:Beverages .
+# 
+# http://dbpedia.org/resource/Yuja_hwachae
+
+<http://dbpedia.org/resource/Yuja_hwachae> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Yxaiio
+
+<http://dbpedia.org/resource/Yxaiio> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Zeeburgereiland
+
+<http://dbpedia.org/resource/Zeeburgereiland> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Zuidas
+
+<http://dbpedia.org/resource/Zuidas> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Ade_(drink_suffix)
+
+<http://dbpedia.org/resource/Ade_(drink_suffix)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Avena_(drink)
+
+<http://dbpedia.org/resource/Avena_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Bandung_(drink)
+
+<http://dbpedia.org/resource/Bandung_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Binnenstad_(Amsterdam)
+
+<http://dbpedia.org/resource/Binnenstad_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Brisk_(beverage)
+
+<http://dbpedia.org/resource/Brisk_(beverage)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Cocaine_(drink)
+
+<http://dbpedia.org/resource/Cocaine_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Diamantbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Diamantbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Duivelseiland_(Amsterdam)
+
+<http://dbpedia.org/resource/Duivelseiland_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Eendracht_(Amsterdam)
+
+<http://dbpedia.org/resource/Eendracht_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Grachtengordel_(Amsterdam)
+
+<http://dbpedia.org/resource/Grachtengordel_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Gunner_(cocktail)
+
+<http://dbpedia.org/resource/Gunner_(cocktail)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Haarlemmerbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Haarlemmerbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Hoppy_(beverage)
+
+<http://dbpedia.org/resource/Hoppy_(beverage)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Houthaven_(Amsterdam)
+
+<http://dbpedia.org/resource/Houthaven_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Kadoelen_(Amsterdam)
+
+<http://dbpedia.org/resource/Kadoelen_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Leben_(milk_product)
+
+<http://dbpedia.org/resource/Leben_(milk_product)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Malvern_Water_(bottled_water)
+
+<http://dbpedia.org/resource/Malvern_Water_(bottled_water)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Milo_(drink)
+
+<http://dbpedia.org/resource/Milo_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Molenwijk_(Amsterdam)
+
+<http://dbpedia.org/resource/Molenwijk_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Mondo_(beverage)
+
+<http://dbpedia.org/resource/Mondo_(beverage)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Museumkwartier_(Amsterdam)
+
+<http://dbpedia.org/resource/Museumkwartier_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Nectar_(drink)
+
+<http://dbpedia.org/resource/Nectar_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Omval_(Amsterdam)
+
+<http://dbpedia.org/resource/Omval_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oosterparkbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Oosterparkbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Oostpoort_(Amsterdam)
+
+<http://dbpedia.org/resource/Oostpoort_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Plantage_(Amsterdam)
+
+<http://dbpedia.org/resource/Plantage_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Portello_(soft_drink)
+
+<http://dbpedia.org/resource/Portello_(soft_drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Rapenburg_(Amsterdam)
+
+<http://dbpedia.org/resource/Rapenburg_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Rivierenbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Rivierenbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Sloten,_Amsterdam
+
+<http://dbpedia.org/resource/Sloten,_Amsterdam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Sloterdijk,_Amsterdam
+
+<http://dbpedia.org/resource/Sloterdijk,_Amsterdam> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Slotervaart_(neighborhood)
+
+<http://dbpedia.org/resource/Slotervaart_(neighborhood)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Squash_(drink)
+
+<http://dbpedia.org/resource/Squash_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Staatsliedenbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Staatsliedenbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Tang_(drink)
+
+<http://dbpedia.org/resource/Tang_(drink)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Teleport_(Amsterdam)
+
+<http://dbpedia.org/resource/Teleport_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Thirst_Buster_(Shell_Canada)
+
+<http://dbpedia.org/resource/Thirst_Buster_(Shell_Canada)> a owl:NamedIndividual , nl:Non-alcoholicDrinks .
+# 
+# http://dbpedia.org/resource/Transvaalbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Transvaalbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Uilenburg_(Amsterdam)
+
+<http://dbpedia.org/resource/Uilenburg_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Waterwijk_(Amsterdam)
+
+<http://dbpedia.org/resource/Waterwijk_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Weesperzijde_(Amsterdam)
+
+<http://dbpedia.org/resource/Weesperzijde_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Westelijke_Eilanden_(Amsterdam)
+
+<http://dbpedia.org/resource/Westelijke_Eilanden_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Westerpark_(former_borough)
+
+<http://dbpedia.org/resource/Westerpark_(former_borough)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Westerpark_(neighborhood)
+
+<http://dbpedia.org/resource/Westerpark_(neighborhood)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Willemspark_(Amsterdam)
+
+<http://dbpedia.org/resource/Willemspark_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://dbpedia.org/resource/Zeeheldenbuurt_(Amsterdam)
+
+<http://dbpedia.org/resource/Zeeheldenbuurt_(Amsterdam)> a owl:NamedIndividual , nl:Zones .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Average
+
+nl2:Average a owl:NamedIndividual , nl:Prices .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Bar_Oldenhof
+
+nl2:Bar_Oldenhof a owl:NamedIndividual .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Beer
+
+nl2:Beer a owl:NamedIndividual , nl:Beverages .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Busy
+
+nl2:Busy a owl:NamedIndividual , nl:Crowd .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Cheap
+
+nl2:Cheap a owl:NamedIndividual , nl:Prices .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Cocktail
+
+nl2:Cocktail a owl:NamedIndividual , nl:Beverages .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Coffee
+
+nl2:Coffee a owl:NamedIndividual , nl:HotDrinks .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#CoffeeShopIBIZA
+
+nl2:CoffeeShopIBIZA a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:LocatedIn <http://dbpedia.org/resource/De_Pijp> ;
+	nl2:Sells nl2:Weed ;
+	nl:Adres "Hemonystraat 16" ;
+	nl:City "Amsterdam" ;
+	nl:Latitude "52.3574476"^^xsd:decimal ;
+	nl:Longitude "4.8999229"^^xsd:decimal ;
+	nl:TitleEN "Coffeeshop IBIZA" ;
+	nl:Zipcode "1074 BP" ;
+	nl:shortdesc "Alleen de beste wiet van de wereld. Coffeeshop IBIZA is wereldwijd bekend als de beste wiet of weed, cannabis winkel van veel bekende marihuana stammen." .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#CoffeeShopTheStud
+
+nl2:CoffeeShopTheStud a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:LocatedIn <http://dbpedia.org/resource/Amsterdam-Oost> ;
+	nl2:Sells nl2:Weed ;
+	nl:Adres "Molukkenstraat 581" ;
+	nl:Latitude "52.3588"^^xsd:decimal ;
+	nl:Locatienaam "Amsterdam" ;
+	nl:Longitude "4.9388213"^^xsd:decimal ;
+	nl:TitleEN "Coffeeshop the stud" ;
+	nl:Zipcode "1095 BJ" ;
+	nl:shortdesc """De buurt kent vele verschillende culturen en word daarnaast ook goed bezocht door toeristen. Het is een kleine, unieke en aparte shop, met een grote vaste klantenkring. The Stud is gedurende de jaren een begrip in ‘onze’ buurt geworden. De sfeer is open en gemoedelijk. Lekker bijkomen met een goede kop koffie en altijd wel met iemand in voor een praatje of gezellige woordenwisseling. Daarnaast kan je een magazine lezen of achter het internet om met je vrienden even te emailen of iets op te zoeken.
+
+De dagelijkse grote dosis inzet en creativiteit van onze medewerkers staan garant voor een gezellig gesprek en uitstekende service.
+
+Wettelijke legitimatie is natuurlijk verplicht en er geldt een minimum leeftijd van 18 jaar, als u hieraan voldoet zullen onze medewerkers u graag van dienst zijn.
+
+Tot slot: de klant is koning zolang hij zich als zodanig gedraagt.
+Veel plezier op de website en tot ziens!""" .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#EasyTimesCoffeeShop
+
+nl2:EasyTimesCoffeeShop a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:LocatedIn <http://dbpedia.org/resource/Amsterdam-Centrum> ;
+	nl2:Sells nl2:Weed ;
+	nl:Adres "Prinsengracht 476" ;
+	nl:City "Amsterdam" ;
+	nl:Latitude "52.3643591"^^xsd:decimal ;
+	nl:Longitude "4.8828176"^^xsd:decimal ;
+	nl:TitleEN "Easytimes coffeeshop" ;
+	nl:Zipcode "1017 KG" ;
+	nl:shortdesc "De beste in de stad! iedereen boven de 18 welkom!" .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Expensive
+
+nl2:Expensive a owl:NamedIndividual , nl:Prices .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Jazz
+
+nl2:Jazz a owl:NamedIndividual , nl:SoftMusic .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Normal
+
+nl2:Normal a owl:NamedIndividual , nl:Crowd .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Pop
+
+nl2:Pop a owl:NamedIndividual , nl:LoudMusic .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Quiet
+
+nl2:Quiet a owl:NamedIndividual , nl:Crowd .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#RandB
+
+nl2:RandB a owl:NamedIndividual , nl:LoudMusic .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Soda
+
+nl2:Soda a owl:NamedIndividual , nl:ColdDrinks .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#SpaceCake
+
+nl2:SpaceCake a owl:NamedIndividual , nl:Drugs .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Techno
+
+nl2:Techno a owl:NamedIndividual , nl:LoudMusic .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Tequila
+
+nl2:Tequila a owl:NamedIndividual , nl:Shots .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Water
+
+nl2:Water a owl:NamedIndividual , nl:ColdDrinks .
+# 
+# http://www.semanticweb.org/owl/owlapi/turtle#Weed
+
+nl2:Weed a owl:NamedIndividual , nl:Drugs .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ABEClubandLounge
+
+nl:ABEClubandLounge a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer , nl2:Cocktail ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Amstelstraat 30" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3662690" ;
+	nl:LongdesEN "Situated on the corner of Rembrandtplein and the Amstelstraat, each week a diverse array of DJ talents take to the intimate space, serving up solid beats that are matched by a social atmosphere and superb service.<br />" ;
+	nl:Longitude "4,8992870" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20140128/1f55d0d2-f99c-4915-863f-827523864ffc.jpg,https://media.iamsterdam.com/ndtrc/Images/20140128/929977d4-4c9f-48d2-b434-e695c7b0e29f.jpg,https://media.iamsterdam.com/ndtrc/Images/20140128/cba85308-6255-4fb5-b952-167737c93319.jpg,https://media.iamsterdam.com/ndtrc/Images/20140128/ff44adff-879e-4768-8103-2de7cef36ed6.jpg" ;
+	nl:ShortdesEN "There aren?t too many nightclubs taking inspiration from banks, but ABE club & lounge pays homage to Abraham Carel Wertheim (1832-1897), a director of Wertheim & Gompertz bank and a spirited philanthropist. As such, the interior design of ABE recalls the booming financial period by giving this former bank?s eclectic style a modern twist. " ;
+	nl:TitleEN "ABE Club & lounge" ;
+	nl:Url "http://www.clubabe.com" ;
+	nl:Zipcode "1017 DA" ;
+	nl:longdesc "Bij Club ABE kun je terecht voor een bijzonder avondje uit vol socializen, verwennerij en gezelligheid op een sfeervolle locatie. Iedere week worden er stevige beats gedraaid door een breed scala aan dj-talenten." ;
+	nl:shortdesc "Club ABE is gesitueerd in het oude bankgebouw van Wertheim & Gompertz, waar Abraham Carel Wertheim ooit directeur van was. De naam ?ABE? refereert ook naar de naam Abraham, en brengt een hommage aan deze voormalige bankdirecteur. Het interieur van de club weerspiegelt de bijzondere periode met een moderne twist." ;
+	nl:trcid "a5cbc9a5-2c69-42d6-b7ac-b98f087c1836" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ABar
+
+nl:ABar a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Cocktail ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Professor Tulpplein 1" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3600380" ;
+	nl:Locatienaam "A Bar" ;
+	nl:LongdesEN "It takes all sort of cocktails, Plush seating, warm lighting and a refined drinks menu maketo make A bar one of the most inviting cocktail bars in the city. On warm days, sit outside on the terrace for a view of the Amstel River while sipping on one of the bar's innovative cocktails, each named after an Amsterdam neighbourhood. For a truly Dutch experience, visit on a Jenever Monday, where you can sample three different styles of the Netherlands&rsquo: famous liquor." ;
+	nl:Longitude "4,9054970" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/51/517c140f-cb8e-4218-86f8-b060a0eb241b/ae0c3ec0-c90b-4820-975c-18a8e38bfe8d.jpg" ;
+	nl:ShortdesEN "In the extravagant InterContinental Amstel Amsterdam hotel, visitors will find the luxurious A bar, where sophistication is evident in every detail?especially the cocktails." ;
+	nl:TitleEN "A Bar" ;
+	nl:Url "http://amsterdam.intercontinental.com/en/restaurants-bars/a-bar" ;
+	nl:Zipcode "1018 GX" ;
+	nl:calendar "Ma-vr: 17:00 - 01:00 uur, za, zo: 14:00 - 01:00 uur." ;
+	nl:longdesc "<h2>Cocktails zoals cocktails moeten smaken</h2> <p>Door de comfortabele stoelen, het warme licht en de verfijnde drankenkaart, is de A Bar in het InterContinental Amstel Amsterdam hotel een van de aantrekkelijkste cocktailbars in de stad. Zoek op warme dagen een plekje op het terras met uitzicht op de Amstel. En geniet van een innovatieve cocktail met de naam van een Amsterdamse buurt. Bezoek voor een authentieke beleving de bar eens op Jenevermaandag en proef drie verschillende soorten van dit beroemde drankje.</p>" ;
+	nl:shortdesc "Ga voor de luxueuze A Bar naar het extravagante InterContinental Amstel Amsterdam hotel. Met veel eigentijdse details, vooral als het om de cocktails gaat." ;
+	nl:trcid "517c140f-cb8e-4218-86f8-b060a0eb241b" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#AIRAmsterdam
+
+nl:AIRAmsterdam a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl:RandB ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Amstelstraat 24" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3662690" ;
+	nl:Locatienaam "AIR Amsterdam" ;
+	nl:LongdesEN "<h2>Techno and house at Amsterdam's Rembrandtplein</h2> Handily located by bustling Rembrandtplein, one of Amsterdam's nightlife hubs, Club AIR is a slick, state-of-the-art club that caters to lovers of house and dance, with an emphasis on sound quality and spectacle. The club has featured both underground and more commercial DJs, including Damian Lazarus, the Martinez Brothers, Ben Pearce, Jazzy Jeff, Ti&euml:sto and Skrillex. The club is divided into three areas, with the biggest one a sizeable split-level room and the other two offering more intimate environs." ;
+	nl:Longitude "4,8992870" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/32/32eabf4b-5391-40bd-894f-147196ccc11f/aa8d3679-fe9e-4123-b2cf-47aac6dc65fc.jpg,https://media.iamsterdam.com/ndtrc/Images/32/32eabf4b-5391-40bd-894f-147196ccc11f/0edafcce-835e-48c1-beab-6191c9c6045d.jpg,https://media.iamsterdam.com/ndtrc/Images/32/32eabf4b-5391-40bd-894f-147196ccc11f/0f189e9f-0301-4fc3-855d-fa2192320703.jpg" ;
+	nl:ShortdesEN "Risen from the ashes of the legendary club iT in Amsterdam's city centre, AIR is a house and dance club with an interior designed by Marcel Wanders and featuring impressive VOID systems, state-of-the-art lighting and a mind-boggling LED wall." ;
+	nl:TitleEN "AIR Amsterdam" ;
+	nl:Url "http://www.air.nl/" ;
+	nl:Zipcode "1017 DA" ;
+	nl:longdesc "<h2>Marcel Wanders</h2> Het interieur van AIR is van de hand van Nederlands' designtrots Marcel Wanders. Zijn beweeglijke ontwerp vol spannende verrassingen heeft een theatraal &eacute:n intiem resultaat opgeleverd dat de zintuigen prikkelt. De bijzondere eigen sfeer van de verschillende ruimtes in het gebouw is meteen voelbaar in de entree en zet door van de bars tot de dansvloer. Over ieder detail is goed nagedacht: de ruime entree is voorzien van unieke elektronische lockers zodat bezoekers snel en veilig hun jas en/of tas kunnen opbergen. Er zijn 3 toiletgroepen, 5 bars en 2 rookruimtes die elk hun eigen design en sfeer hebben." ;
+	nl:shortdesc "Nachtclub met een internationale allure.  AIR is gebouwd op een legendarische plek (de Amstelstraat - de voormalige locatie van de iT). " ;
+	nl:trcid "32eabf4b-5391-40bd-894f-147196ccc11f" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Akhnaton
+
+nl:Akhnaton a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Nieuwezijds Kolk 25" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3761690" ;
+	nl:Locatienaam "Akhnaton " ;
+	nl:LongdesEN "<h2>Party and event location</h2> <strong>Akhnaton</strong> is a <strong>flexible party and event location</strong> in the heart of <strong>Amsterdam</strong>. From the beginning it has been a centre of new music styles from faraway countries and regions, including salsa, reggae, punk and hip-hop. The capacity for parties is 200-300 people, while its <strong>caf&eacute:</strong> and <strong>terrace</strong> is open from 12:00 each day." ;
+	nl:Longitude "4,8939350" ;
+	nl:ShortdesEN "Akhnaton is a café, hall, society and nightclub set up by Amsterdam students." ;
+	nl:TitleEN "Akhnaton" ;
+	nl:Url "http://www.akhnaton.nl/" ;
+	nl:Zipcode "1012 PV" ;
+	nl:shortdesc "Akhnaton is een café/zaal/sociëteit die door studenten is opgericht. De vestiging aan de Kolk was van het begin af aan een centrum voor nieuwe muziekstijlen uit verre landen en streken, zoals salsa, reggae, punk en hip hop." ;
+	nl:trcid "c2db2e0a-1c49-4696-b10a-fe431db9befb" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#AmstelFiftyFour
+
+nl:AmstelFiftyFour a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Cheap ;
+	nl:Adres "Amstel 54" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3669010" ;
+	nl:Locatienaam "Amstel Fifty Four" ;
+	nl:Longitude "4,8951110" ;
+	nl:Media "https://media.ndtrc.nl/Images/98/984d8c27-2a18-4273-b784-454d9decd719/c2aaedec-960d-46a6-92c0-215c1eea1f96.jpg" ;
+	nl:ShortdesEN "Formerly known as the Amstel Taveerne, this lively gay and lesbian bar close to Rembrandtplein got a full makeover in 2007, turning it into a modern video bar that has proved popular with a wide range of ages." ;
+	nl:TitleEN "Amstel Fifty Four" ;
+	nl:Url "https://www.facebook.com/amstel54/timeline" ;
+	nl:Zipcode "1017 AB" ;
+	nl:shortdesc "Deze moderne videobar stond eerder bekend als de Amstel Taveerne en onderging in 2007 een metamorfose. Deze levendige homo- en lesbo bar zit vlakbij het Rembrandtplein." ;
+	nl:trcid "984d8c27-2a18-4273-b784-454d9decd719" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#AmsterdamRoest
+
+nl:AmsterdamRoest a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Jacob Bontiusplaats 1" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3679380" ;
+	nl:Locatienaam "Amsterdam Roest" ;
+	nl:LongdesEN "<h2>Beach bar</h2> One thing that Amsterdam East has that the city centre sometimes feels lacking of is: space. And Amsterdam Roest makes good use of its plentiful real estate. The sandy waterside setting encourages punters to get their toes out in summer, and this is combined with a huge hall used for markets, film screenings and other (often child-friendly) events. The hall also adds some industrial charm to the city beach idyll. Roest&rsquo:s caf&eacute: and bar offers a wide selection of drinks and snacks, so no beach bum has to go hungry.<br /> <br /> <h2>How to get there</h2> Tram 10, bus 22. This information is subject to change: for up-to-date public transport info check the <a href=&quot:http://en.gvb.nl&quot:>GVB website</a>" ;
+	nl:Longitude "4,9256530" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20150320/7dbabc2c-073c-4130-93a7-8c9a09429909.jpg,https://media.iamsterdam.com/ndtrc/Images/20150320/79440eba-786d-4216-b370-ba2a95a056fe.jpg" ;
+	nl:ShortdesEN "Amsterdam Roest, city beach, market and event hall and bar in one, perfectly encapsulates the spirit of cool Amsterdam East. " ;
+	nl:TitleEN "Amsterdam Roest" ;
+	nl:Url "http://www.amsterdamroest.nl" ;
+	nl:Zipcode "1018 PL" ;
+	nl:longdesc "<h2>Chillen, dansen, drinken</h2> Amsterdam Roest heeft verschillende ruimtes: het Roest Caf&eacute:, de Roest Loods en het buitenterrein. Je kunt rustig zitten en genieten op het strandje, dansen in het caf&eacute: of over de markten in de loods slenteren. Ook vinden er filmvertoningen, festivals en theatervoorstellingen plaats in de loods. Op het menu van het caf&eacute: staan verschillende lekkere hapjes zodat je niet hongerig naar huis hoeft.<br /> <br /> <h2>Openbaar vervoer</h2> Tram 10, bus 22. Deze informatie is onder voorbehoud. Kijk op de website van <a href=&quot:http://www.gvb.nl&quot:>GVB</a> voor de meest recente informatie." ;
+	nl:shortdesc "Roest, in het oorspronkelijke Koud Gas Gebouw, is een unieke locatie met een warme, industriële en vooral uitnodigende sfeer. " ;
+	nl:trcid "944c8abe-b474-4457-ad20-f732fb907e41" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BarAmericain
+
+nl:BarAmericain a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Cocktail ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Leidsekade 97" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3638290" ;
+	nl:Locatienaam "Bar Americain" ;
+	nl:LongdesEN "Nevertheless, sometimes world celebrities turn up, and the walls are hung with photos to prove it. The likes of Lenny Kravitz, ZZ Top and Eric Clapton have all passed by for a drink. It is also crowded with business people, hotel guests and Amsterdam residents drinking the specialty of the house: cocktails. During the summer they have a great terrace in front, facing a stone fountain." ;
+	nl:Longitude "4,8809910" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120521/85d4e150-76b5-4def-b09d-09371c1bca04.jpg,https://media.iamsterdam.com/ndtrc/Images/20120521/c0dff4df-13b4-497d-a999-e9dfb285b089.jpg" ;
+	nl:ShortdesEN "The bar of the stunning art deco American Hotel on the Leidseplein is not quite so chic as most hotel bars, in fact it?s a bit naf." ;
+	nl:TitleEN "Bar Americain" ;
+	nl:Url "http://www.edenamsterdamamericanhotel.com/nl/restaurant.aspx" ;
+	nl:Zipcode "1017 PN" ;
+	nl:longdesc "Tevens nog steeds een hot-spot voor sterren uit binnen- en buitenland. Een ideale plek dus voor VIP-spotting onder het genot van een 'award-winning' cocktail." ;
+	nl:shortdesc "Bar Americain is helemaal ge-restyled en daardoor nóg populairder onder de Amsterdammers." ;
+	nl:trcid "104b4ee7-dccc-4688-a386-9f3833d1ac25" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BarBarbou
+
+nl:BarBarbou a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Cocktail ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Keizersgracht 384" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3692810" ;
+	nl:Locatienaam "Bar Barbou" ;
+	nl:LongdesEN "Bar Barbou, in the five star hotel The Dylan, fulfils all expectations. The public spaces in the hotel are light and bright and have a sofa from Fendi and a gorgeous bar. One can indulge in the glamorous clientele and order drinks in the golden-yellow lounge, the long gallery, the bar itself and, weather permitting, in the courtyard. Along with the excellent but expensive wine, one can eat, for example, homemade veal rissoles and tuna rilette." ;
+	nl:Longitude "4,8843040" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120521/aece2972-22ee-4d62-8520-2158db598e6b.jpg" , "https://media.iamsterdam.com/ndtrc/Images/20130729/7eb362f3-d206-4ada-bccb-160ae64dfb46.jpg" ;
+	nl:ShortdesEN "Is there really anything better than going out for a drink in a stylish hotel bar?" ;
+	nl:TitleEN "Bar Barbou" ;
+	nl:Url "http://dylanamsterdam.com/" , "http://www.dylanamsterdam.com" ;
+	nl:Zipcode "1016 GB" ;
+	nl:longdesc "Bar Barbou, van vijfsterren hotel The Dylan, voldoet aan alle verwachtingen. De openbare ruimte van het hotel is licht en open met onder andere een bank van Fendi en een prachtige bar bekleed met stukjes been. Er zijn verschillende ruimtes om drankjes te bestellen en het glamourous publiek te bekijken: de goudgele lounge, de long gallery, de bar zelf en als het goed weer is ook nog in de binnentuin. Bij de goede maar prijzige wijn eet je onder andere handgemaakte kalfskroketten en rilette van tonijn." , "Jong en hip Amsterdam is vaste gast in The Dylan en komt graag in de zomer wat drinken in de mooie binnenplaats. Bestel naast de (dure) wijn in Bar Barbou een bruschetta met gestoomde makreel of een pizzapunt met tomatensalsa, pesto en mozzarella. Proost" ;
+	nl:shortdesc "De inrichting van dit charmante grachtenhotel aan de Keizersgracht ging al meerdere malen op de schop. Zo werd een gedeelte van de lounge afgelopen jaar omgetoverd tot een brasserie, Occo. BESTAAT NIET MEER IS NU BAR BRASSERIE OCCO" , "Niks prettiger dan uit drinken gaan in een stijlvolle hotelbar.  IS NU BAR BRASSERIE OCCO" ;
+	nl:trcid "9b021a35-034b-403c-b456-fa7c30f9bba7" , "d18473bf-4e35-4040-a86e-9b3d6c6aa868" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BarBodegaDeBlauweParade
+
+nl:BarBodegaDeBlauweParade a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Nieuwezijds Voorburgwal 176-180" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3739700" ;
+	nl:Locatienaam "Hotel Die Port van Cleve" ;
+	nl:LongdesEN "<h2>Time-honoured Amsterdam hospitality</h2> De Blauwe Parade has a long history: on 5 September 1870, the Hulscher brothers opened their pub Die Port van Cleve, today a hotel, in the building and bottled and sold Heineken beer as well as wines, port, sherry and cognac. Today, the bar still serves local beers &ndash: including Heineken &ndash: jenever and local liqueurs in combination with tasty traditional Dutch snacks. The bar also offers jenever tastings.<br /> <span style=&quot:font-size: 20px:&quot:><br /> Delft Blue mural</span><br /> Besides shiny beer taps, De Blauwe Parade has another sight to offer: a mural from original Delft Blue tiles, made by the Porceleyne Fles in 1887 and the largest of its kind in the world. It has recently gone extensive restoration to bring it back to its former glory." ;
+	nl:Longitude "4,8906460" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/e5/e5e2fb79-7857-4dd5-a1ab-cc213e663242/a0d6ada0-f933-4eff-b384-b1db28bc7773.jpg,https://media.iamsterdam.com/ndtrc/Images/e5/e5e2fb79-7857-4dd5-a1ab-cc213e663242/612fffca-1e77-420d-8db9-cd5bb5728a3d.jpg" ;
+	nl:ShortdesEN "De Blauwe Parade is a perfect spot to escape the hustle and bustle of Amsterdam?s city centre to enjoy drinks and snacks in beautiful historic ambiance. " ;
+	nl:TitleEN "Bar-Bodega De Blauwe Parade" ;
+	nl:Url "http://www.dieportvancleve.com/" ;
+	nl:Zipcode "1012 SJ" ;
+	nl:longdesc "<h2>Bijzonder Delfts blauw</h2> De bar beschikt over een bijzondere ambiance door de donkere houten meubels en uniek Delfts blauw porseleinen tegelfries uit 1887. Het tegelfies is het grootste Delfts blauwe tegeltableau ter wereld. Het ontwerp in van de hand van A. Le Comte, gemaakt door Poreceleyne Fles en geschilderd door L. Senf.<br /> <span style=&quot:font-size: 11pt: line-height: 107%: font-family: calibri, sans-serif:&quot:><br /> <br /> </span>" ;
+	nl:shortdesc "In hotel Die Port van Cleve in Amsterdam vind je de traditionele bar-bodega De Blauwe Parade. Hier kun je terecht voor een drankje, hapje of deelnemen aan een echte Nederlandse Jenever- of likeurproeverij. De bar is een fijne plek om even tot rust te komen en te genieten van een Oud-Hollandse sfeer." ;
+	nl:trcid "e5e2fb79-7857-4dd5-a1ab-cc213e663242" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BarBotanique
+
+nl:BarBotanique a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Eerste van Swindenstraat 581" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3634080" ;
+	nl:Locatienaam "Bar Botanique" ;
+	nl:LongdesEN "<h2>Hip new tropical caf&eacute: in Amsterdam East</h2> <p class=&quot:MsoNormal&quot:><span lang=&quot:EN-US&quot:>The much-loved former Dutch local, De Ponteneur, has been transformed by Studio Modijefsky, returning the massive original windows to their former glory and bathing the whole caf&eacute: in light. Retro design and tropical greenery complete the impression of languid period extravagance. </span></p>" ;
+	nl:Longitude "4,9302370" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/db/db0fb5a3-cfe1-4a0a-b35a-fe11e9ac2888/a5738241-9839-4284-8e1c-2368b85b825a.jpg" ;
+	nl:ShortdesEN "Amsterdam East has a hip new hotspot: Bar Botanique. The tropical café on Eerste van Swindenstraat is open all day for breakfast, lunch, dinner and drinks. Relax with the French Mediterranean menu or grab a quick pizza." ;
+	nl:TitleEN "Bar Botanique" ;
+	nl:Url "http://www.barbotanique.nl/" ;
+	nl:Zipcode "1093 LC" ;
+	nl:calendar "Ma-do: 09:00 - 01:00 uur, vr, za: 09:00 - 03:00 uur, zo: 09:00 - 01:00 uur." ;
+	nl:shortdesc "Amsterdam Oost heeft er een hotspot bij: Bar Botanique. Een gezellige tent met veel groen en een hip retro interieur waar je afspreekt met je vrienden voor een goede lunch, diner of borrel." ;
+	nl:trcid "db0fb5a3-cfe1-4a0a-b35a-fe11e9ac2888" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BilliesBar
+
+nl:BilliesBar a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl2:Jazz ;
+	nl2:ServesDrink nl2:Cocktail ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Pazzanistraat 1" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3858260" ;
+	nl:Locatienaam "Billie's Bar" ;
+	nl:LongdesEN "<h2>Jazz on the menu</h2> No nightspot named after Billie Holiday would be complete without live music, which is furnished by Billie&rsquo:s Bar&rsquo:s own jazz-singing hostess, Brenda Frans, alongside a host of fresh new talent. <o:p></o:p>" ;
+	nl:Longitude "4,8717060" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/e7/e75c41b6-cdf3-4794-a7e9-08155c7eb0a8/09253521-a921-4a27-85e2-c548ea9fba58.jpg" ;
+	nl:ShortdesEN "Named after Billie Holiday, the North Sea Jazz Club?s new restaurant opened in Amsterdam?s Westerpark in summer 2016. The eastern and Mediterranean cuisine ranges from sushi and dim sum to duck breast and entrecote, and classic cocktails are joined by exotic creations such as Billie?s own Arak Madu." ;
+	nl:TitleEN "Billie's Bar" ;
+	nl:Url "http://www.northseajazzclub.com/billies-bar/" ;
+	nl:Zipcode "1014 DB" ;
+	nl:calendar "Wo-za: 17:00 - 01:00 uur, zo: 15:30 - 01:00 uur, Toelichting: Keuken sluit om 22:00 uur." ;
+	nl:shortdesc "In dit nieuwe restaurant van de North Sea Jazz Club in het Westerpark komen live-muziek en exotische gerechten samen. Geniet van een Oosters of Mediterraans hapje, neem er een cocktail bij en laat de rest van je zintuigen prikkelen door de gratis jazz-optredens. " ;
+	nl:trcid "e75c41b6-cdf3-4794-a7e9-08155c7eb0a8" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Bitterzoet
+
+nl:Bitterzoet a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Spuistraat 2" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3771730" ;
+	nl:Locatienaam "Bitterzoet" ;
+	nl:LongdesEN "<h2>A home to pop, rock and hip-hop</h2> <strong>Bitterzoet</strong> has established itself as one of Amsterdam's core <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/music/music-venues-in-amsterdam&quot:>music venues</a> and <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam/dance-clubs&quot:>clubs</a>, both in collaboration with pop temple <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam/dance-clubs/paradiso&quot:>Paradiso</a>, as well as an independent party location. Every day there is a different <strong>DJ line-up</strong>, <strong>band</strong> or <strong>theatre production</strong>, attracting a musically eclectic fan base: from rock through punk, hip-hop, soul and funk to reggae &ndash: and everything in between. Set on the Spuistraat, it's close to both the Central Station and the Jordaan neighbourhood." ;
+	nl:Longitude "4,8938170" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20121015/1b0b1883-a08e-4a28-8fbd-ccb30e20be2d.jpg,https://media.iamsterdam.com/ndtrc/Images/20121015/3a86572e-05eb-4eb3-aabc-b8e4902e678f.jpg" ;
+	nl:ShortdesEN "Bitterzoet ('bittersweet') with its slick design functions as a bar as well as a club, music venue and theatre." ;
+	nl:TitleEN "Bitterzoet" ;
+	nl:Url "http://www.bitterzoet.com/" ;
+	nl:Zipcode "1012 TS" ;
+	nl:shortdesc "Bitterzoet is een bar, een podium & een theater. Elke dag een andere programmering variërend van dj's en bands tot theaterproducties." ;
+	nl:trcid "a304a22c-5ba7-43c0-b876-ef24877672d3" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#BlendCoffeeAndWine
+
+nl:BlendCoffeeAndWine a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Coffee ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Oranje-Vrijstaatplein 40" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3565010" ;
+	nl:Locatienaam "Blend Coffee & Wine" ;
+	nl:Longitude "4,9303770" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/fb/fb30ef68-54ad-4a89-883a-621dabae727f/79c3f286-0671-4b7e-ab05-117e40df0d38.jpg" ;
+	nl:ShortdesEN "Sip an espresso in the morning and a glass of wine in the evening (or even the afternoon) at this coffee and wine bar, where the Mediterranean way of life ? relaxed and casual ? is alive and well. Visitors are never rushed out the door, and are invited to nibble on snacks as well as full meals for breakfast, lunch and dinner enjoyed inside or out on the terrace." ;
+	nl:TitleEN "Blend Coffee & Wine" ;
+	nl:Url "http://www.blendcoffeewine.nl" ;
+	nl:Zipcode "1093 NG" ;
+	nl:calendar "Ma, di: 08:00 - 20:00 uur, wo, do: 08:00 - 22:00 uur, vr: 08:00 - 00:00 uur, za: 08:00 - 22:00 uur, zo: 08:00 - 20:00 uur." ;
+	nl:shortdesc "Geniet ?s ochtends van een espresso en ?s avonds (of ?s middags) van een glas wijn bij deze koffie- en wijnbar, waar een ontspannen, mediterrane sfeer hangt. Je mag hier zo lang blijven zitten als je wilt. Dat mag zelfs een hele dag zijn, want je kunt binnen en buiten op het fijne terras terecht voor ontbijt, lunch én diner. " ;
+	nl:trcid "fb30ef68-54ad-4a89-883a-621dabae727f" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Club8
+
+nl:Club8 a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "Admiraal de Ruijterweg 56B" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3712420" ;
+	nl:Locatienaam "Club 8" ;
+	nl:LongdesEN "<h2>Amsterdam indie club</h2> <p>Club 8 has a firm standing in <strong>Amsterdam's alternative</strong> <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam&quot:>nightlife</a> scenes. On the top floor, club nights like Club Rascal, Billie &amp: Betty's Beat Boutique and Burlesque Freakout made a name for themselves amongst the <strong>indie, beat and burlesque scenes</strong> respectively. </p> <h2>Pool &amp: snooker</h2> <p>The second floor is home to 22 pool and snooker tables, available from the afternoon until late. An arts programme also provides young artists with gallery and studio space - their work helps decorate the club.</p>" ;
+	nl:Longitude "4,8619500" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120524/0195314d-ac19-421d-af63-b04f65215a8e.jpg" ;
+	nl:ShortdesEN "Club 8 is a multistorey club in Amsterdam's West district, catering to a varied crowd of partygoers, including indie kids and burlesque lovers. " ;
+	nl:TitleEN "Club 8" ;
+	nl:Url "http://www.club-8.nl/" ;
+	nl:Zipcode "1056 GL" ;
+	nl:longdesc "In het grote pand in Amsterdam-West kun je tijdens clubavonden of feesten dansen en drinken op rauwe indierock, house en electro, maar er zijn ook disco-avonden. De poolhal is internationaal bekend en telt maar liefst 24 tafels." ;
+	nl:shortdesc "Club 8 is een laagdrempelige club, bar, poolhal en expositieruimte ineen. " ;
+	nl:trcid "cfd475f1-33cd-4106-b715-df31ed741329" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ClubArena
+
+nl:ClubArena a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "'s-Gravesandestraat 51" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3612330" ;
+	nl:LongdesEN "<h2>Hotel Arena in Amsterdam</h2> <strong>Club Arena</strong> is one of Amsterdam's renowned <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam&quot:>clubbing spots</a>, offering a varying programme that mixes international DJs and different theme evenings. It's situated within <a href=&quot:http://www.iamsterdam.com/en/visiting/plan-your-trip/where-to-stay/hotels/hotel-arena&quot:>Hotel Arena</a>, which as well as providing bedrooms and suites for Amsterdam visitors, it also houses <strong>bars</strong>, <strong>restaurants</strong> and <strong>meetings spaces</strong>.<br /> <br /> <h2>A club with history</h2> <strong>Hotel Arena</strong> is located in the old Sint Elisabeth Gesticht (psychiatric hospital). The psychiatric hospital took in older women who were either unable to care for themselves or who needed long term nursing. The hospital had several different classes of care depending on the income of the patient and included one for women without incomes. The complex had several uses before being turned into a <strong>four-star hotel</strong> and <strong>nightclub</strong> in 2003." ;
+	nl:Longitude "4,9163280" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20110315/ec923ad5-93b1-4d6c-8f27-3f1f4072929c.jpg" ;
+	nl:ShortdesEN "Located in the building's former chapel, Club Arena is a beautiful and spacious yet intimate club, consisting of two dance floors where locals, tourists, and hotel quests meets. " ;
+	nl:TitleEN "Club Arena" ;
+	nl:Url "http://www.hotelarena.nl" ;
+	nl:Zipcode "1092 AA" ;
+	nl:calendar "Altijd open" ;
+	nl:shortdesc "Club Arena is de club van hotel Arena. De club is gesitueerd in een voormalige kapel. De ruime maar toch intieme club, bestaat uit 2 dansvloeren waar de lokale bevolking, toeristen en hotelgasten elkaar ontmoeten. Het gevarieerde programma biedt een mix van internationale DJ's en verschillende thema-avonden. Overdag wordt de ruimte besteed voor zaken en culturele-conferenties." ;
+	nl:trcid "7e11f356-74c0-4341-81fe-7704fd50f6ed" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ClubCandela
+
+nl:ClubCandela a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl:RandB ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Korte Leidsedwarsstraat 85" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3638650" ;
+	nl:Locatienaam "Club Candela" ;
+	nl:LongdesEN "<h2>Leidesplein party hotspot</h2> Open until 4am every night (5am on Fridays and Saturdays), Cafe Candela can always be counted on for some late night fun times in Amsterdam centre. With regular drinks specials, DJs spinning everything from R&amp:B to Rock and Latino and regular karaoke and open mic nights, the club attracts a lively crowd of friendly locals and visitors every night of the week." ;
+	nl:Longitude "4,8838580" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/ab/ab0f2daa-d715-4192-baba-69f8fb0d03eb/09ea5b9e-21e9-45d7-bbe0-e70cf0f0aa3b.jpg" ;
+	nl:ShortdesEN "The party never stops at this lively two-storey nightclub cafe in the heart of Amsterdam's Leidesplein area. " ;
+	nl:TitleEN "Club Candela" ;
+	nl:Zipcode "1017 PX" ;
+	nl:longdesc "<h2>Feesten tot in de late uurtjes</h2> Bij Cafe Candela gaan doordeweeks de lichten pas om 4.00 aan en in het weekend kun je zelfs een uur langer doorfeesten. De club midden in het centrum van Amsterdam trekt iedere avond een leuke mix van bezoekers, van locals tot toeristen. Met regelmatige karaoke- en open mic-avonden en dj's die alles draaien van R&amp:B tot Rock en Latino, is er dan ook voor ieder wat wils." ;
+	nl:shortdesc "Bij deze bruisende nachtclub vlakbij het Leidseplein in het centrum van Amsterdam is het altijd feest. " ;
+	nl:trcid "ab0f2daa-d715-4192-baba-69f8fb0d03eb" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ClubChurch
+
+nl:ClubChurch a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Cheap ;
+	nl:Adres "Kerkstraat 52" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3658770" ;
+	nl:Locatienaam "Club Church" ;
+	nl:Longitude "4,8859130" ;
+	nl:Media "https://media.ndtrc.nl/Images/d8/d873e103-1232-4ce7-893f-6ed8a32b7df1/0b7f7f13-826b-4bb9-97c2-779c21ba985d.jpg" ;
+	nl:ShortdesEN "This gay cruise club on the Kerkstraat hosts large-scale parties catering to a wide range of sub-groups within the gay community. Club Church regularly organises theme nights and DJs take to the decks every night." ;
+	nl:TitleEN "Club Church" ;
+	nl:Url "http://www.clubchurch.nl/" ;
+	nl:Zipcode "1017 GM" ;
+	nl:shortdesc "In deze gay cruise club worden grootschalige (thema)feesten georganiseerd voor verschillende subgroepen binnen de Amsterdamse gay scene. Dj?s zorgen elke avond voor een muzikaal avondje uit." ;
+	nl:trcid "d873e103-1232-4ce7-893f-6ed8a32b7df1" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ClubNYX
+
+nl:ClubNYX a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl:RandB ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Reguliersdwarsstraat 42" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3661890" ;
+	nl:Locatienaam "Club NYX" ;
+	nl:Longitude "4,8921870" ;
+	nl:Media "https://media.ndtrc.nl/Images/ec/ec707f86-0eb6-466d-a072-6670b8de4c25/308e4bee-537c-4ea6-b965-a3b6e63bb8d1.jpg" ;
+	nl:ShortdesEN "Rising from the ashes of the famous EXIT club on the Reguliersdwarsstraat, NYX is a gay club that?s open to all sexual persuasions ? encouraging gay clubbers to take their straight friends with them. The club is spread over three floors and hosts performances and club nights catering to a range of musical tastes. " ;
+	nl:TitleEN "Club NYX" ;
+	nl:Url "http://clubnyx.nl/" ;
+	nl:Zipcode "1017 BM" ;
+	nl:shortdesc "In deze gay club is iedereen met welke seksuele voorkeur dan ook welkom ? gay stappers worden aangemoedigd hun hetero vrienden mee te nemen. NYX zit in het voormalige pand van de beroemde EXIT club in de Reguliersdwarsstraat en is verdeeld over drie verdiepingen. NYX biedt optredens en clubavonden in diverse muziekstijlen." ;
+	nl:trcid "ec707f86-0eb6-466d-a072-6670b8de4c25" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ClubUp
+
+nl:ClubUp a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl:Techno ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Korte Leidsedwarsstraat 26" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3636980" ;
+	nl:Locatienaam "Club Up" ;
+	nl:LongdesEN "<h2>Cool clubbing in Amsterdam</h2> <strong>Club Up</strong> plays host to <strong>cool clubbing</strong> parties and fantastic DJs every Thursday, Friday and Saturday. The club is open to everyone who's interested in eccentric, wacky, free-spirited parties with a decidedly artistic edge, promising an eclectic mix of <strong>house</strong>, <strong>disco</strong>, <strong>techno</strong>, <strong>R&amp:B</strong> and other EDM subcultures. Club Up also regularly throws (after)<strong>parties</strong> for other <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/festivals&quot:>Amsterdam festivals</a> and initiatives, such as the <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/festivals/overview-cultural-festivals/amsterdam-fringe-festival&quot:>Amsterdam Fringe Festival</a> and the <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/festivals/overview-music-festivals/amsterdam-dance-event&quot:>Amsterdam Dance Event</a>." ;
+	nl:Longitude "4,8839440" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120524/59c6e0ae-a157-424b-bd58-ce47e2a3ed22.jpg" ;
+	nl:ShortdesEN "Club Up is a stage for talented young DJs and producers hosted in the swanky art club De Kring ? which usually only admits members." ;
+	nl:TitleEN "Club Up" ;
+	nl:Url "http://www.clubup.nl/" ;
+	nl:Zipcode "1017 RC" ;
+	nl:shortdesc "Sociëteit de Kring, waar doorgaans druk geconverseerd wordt door Amsterdams culturele intelligentsia, verandert voor feestjes regelmatig in Club Up. Op deze avonden bepalen dj?s de sfeer van dit monumentale gebouw vlakbij het Leidseplein. Het arty publiek danst dan op house, minimal, techno en wat al niet meer." ;
+	nl:trcid "4f655e7c-160c-44f1-9298-3b9123d7a75e" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#CottonClub
+
+nl:CottonClub a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl2:Jazz ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Nieuwmarkt 5 H" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3726710" ;
+	nl:Locatienaam "Cotton Club" ;
+	nl:LongdesEN "This Surinam-Amsterdam jazz caf&eacute: has been in existence since the thirties and still seems, despite some restoration, to be a bit chaotic&mdash:just as a good jazz caf&eacute: should be. Sit back and listen or join in and dance to live jazz, swing and funk by Holland&rsquo:s best jazz musicians. There is also a pool table." ;
+	nl:Longitude "4,9010220" ;
+	nl:ShortdesEN "At the Cotton Club you just might think you?re at the world famous Harlem nightclub in New York. Actually the one in Amsterdam is nearly just as legendary." ;
+	nl:TitleEN "Cotton Club" ;
+	nl:Url "http://www.cottonclubmusic.nl/" ;
+	nl:Zipcode "1011 JP" ;
+	nl:longdesc "Het Surinaams-Amsterdamse jazzcaf&eacute: bestaat al sinds de jaren dertig en oogt ondanks kleine verbouwinkjes een beetje afgeragd, zoals het een goed jazzcaf&eacute: betaamt. Je kunt hier geregeld dansen op live jazz, swing en funk van Nederlands beste jazzmusici. Ook is er een pooltafel." ;
+	nl:shortdesc "Bij de Cotton Club denk je natuurlijk aan die wereldberoemde nachtclub in Harlem, New York. Toch heeft Amsterdam er ook een die al bijna net zo legendarisch is. " ;
+	nl:trcid "a21e1a5b-f522-48da-ab8e-1e848e635f5e" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Escape
+
+nl:Escape a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "Rembrandtplein 11" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3663530" ;
+	nl:Locatienaam "Escape" ;
+	nl:LongdesEN "<p class=&quot:MsoNormal&quot:><span style=&quot:font-size: 12.8px:&quot:></span></p> <h2>Amsterdam clubbing</h2> <p class=&quot:p1&quot:><span class=&quot:s1&quot:>Like everywhere in the world, the <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam&quot:><span class=&quot:s2&quot:>clubbing scene</span></a> is often transient, with new <strong>clubs</strong> here today and gone tomorrow. Escape, however, is a veritable evergreen of Amsterdam&rsquo:s <strong>nightlife</strong>. Always teeming with pretty young things, the club offers a musical menu covering all popular styles of <strong>dance</strong> music: <strong>house, electro, techno and pop</strong>. Amsterdam's finest hit the decks at the club alongside world-famous DJs including Ti&euml:sto, David Guetta, Paul van Dyk, Kevin Saunderson and Todd Terry.<br /> <br /> </span></p> <p class=&quot:p2&quot:><span style=&quot:font-size: 12.8px:&quot:></span></p> <h2>Dance music and more</h2> <span class=&quot:s1&quot:></span> <p class=&quot:MsoNormal&quot:> </p> <p class=&quot:p1&quot:><span class=&quot:s1&quot:>Rembrandtplein is one of Amsterdam&rsquo:s most popular areas for going out, and Escape is its centre with revellers flocking to the club for dancing through the night. Alongside the club, Escape also features the DeLux bar, the Caffe, the Studio and the Lounge, a smaller venue blending intimacy with sophistication.</span></p>" ;
+	nl:Longitude "4,8977880" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/13/1319d1b9-5ac7-4232-bd01-1831f5d81c4a/662f6cb8-9b2c-4e54-bcbe-405d3f027e3d.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/e6fc2550-7fe3-4be4-b689-879778d64f73.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/84cca3e9-b8ff-479b-bd79-a9d0f13bf544.jpg" ;
+	nl:ShortdesEN "Located on the lively Rembrandtplein in the city centre, Escape is one of Amsterdam's largest and most popular night clubs." ;
+	nl:TitleEN "Escape" ;
+	nl:Url "http://www.escape.nl/,http://www.facebook.com/escapeamsterdam/" ;
+	nl:Zipcode "1017 CT" ;
+	nl:longdesc "<h2>Uitgaan in hartje Amsterdam</h2> Een uniek gegeven in de Nederlandse uitgaanswereld. Want waar discotheken en <a target=&quot:_blank&quot: href=&quot:&ldquo:http://www.iamsterdam.com/nl/uit-in-amsterdam/uit/clubs-en-uitgaan&rdquo:&quot: re_target=&quot:_blank&quot:>clubs</a>   komen en gaan verwelkomt Escape al 25 jaar wekelijks duizenden bezoekers op populaire concepten als Reveal, Brainwash, Episode, Houserockers, Golden, Superstars, Miss Taylor en meer. Escape heeft vele concepten en TV opnamen gehuisvest zoals Dit was het nieuws opnames voor de Sky Channel Eurochart Top 50 en Tros Popformule met Linda de Mol en Martijn Krabb&eacute:, evenals de wekelijkse Chemistry en Rush, TMF Show Case en Veronica met de Millenium Countdown.<br /> <br /> Escape is het toneel van vele nationale als internationale top DJ&rsquo:s zoals Ti&euml:sto, Armin van Buuren, Fedde le Grand, Kerri Chandler, Bob Sinclar, Kevin Saunderson, Marco V., Dennis Ferrer, Ron Carroll, Todd Terry, David Guetta en Paul van Dyk. Uiteraard ook Nederlandse toppers als Raymundo, Frederik Abas, Roog, Lucien Foort, Jaz von D, etc.<br /> <br /> Escape won vele prijzen en awards voor beste club en meest innovatieve club. Want Escape blijft vernieuwen. Met nieuwe technieken als LED, zoals een scala aan LED gebaseerde licht-units en een enorm oppervlak aan LED-videoschermen, is Escape een visueel paradijs in het uitgaansleven: de bezoeker is omringd door prachtige visuals. Daarnaast zijn er twee VIP decks, &eacute:&eacute:n op het podium en &eacute:&eacute:n in de zaal, voor diegenen die houden van een beetje extra luxe tijdens het uitgaan.<br /> <br /> In 2011 vierde Escape haar 25e verjaardag, met vele hoogtepunten waaronder in het bijzonder het<strong> Amsterdam Dance Event</strong> in oktober. Maar ook daarna is er weer geacht aan vernieuwing, zoals de introductie van Brainwash op zaterdagavond. Een nieuw concept waarbij de bezoeker in de watten wordt gelegd met knallende line-ups, een schitterende licht- en visualshow en topgeluid.<br /> <br /> Ook zit Escape niet stil op het gebied van interactie met haar bezoekers, want met eigen apps voor iPhone en Android en een alsmaar groeiende Facebook pagina blijft iedereen op de hoogte van de laatste ontwikkelingen en events en natuurlijk alle partyfoto's." ;
+	nl:shortdesc "Escape is één van de grootste clubs in het hartje van Amsterdam. Al sinds 1986 speelt Escape een leidende rol in het Nederlandse uitgaansleven. Licht, geluid, visuals en decoratie, alles is wekelijks helemaal top geregeld. " ;
+	nl:trcid "1319d1b9-5ac7-4232-bd01-1831f5d81c4a" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#ExitCafe
+
+nl:ExitCafe a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Reguliersdwarsstraat" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3661640" ;
+	nl:Locatienaam "Exit Café" ;
+	nl:Longitude "4,8923250" ;
+	nl:Media "https://media.ndtrc.nl/Images/41/41ce60b6-bf7a-4eca-bceb-9177133610b3/e7b0ea11-9985-4e2a-8bbf-15edc77ae771.jpg" ;
+	nl:ShortdesEN "The sister bar to Club NYX, EXIT Café remains open later than most on Amsterdam?s Reguliersdwarsstraat. The LGBTI bar may be decorated in the style of a cosy ski lodge, but that doesn?t mean it?s any less of a party. Expect a friendly crowd, pop hits and house beats until early in the morning. " ;
+	nl:TitleEN "Exit Café" ;
+	nl:Zipcode "1017 BM" ;
+	nl:shortdesc "Het EXIT Café ziet eruit als een knusse après-ski blokhut. Je kunt hier tot in de late uurtjes pophits en lekkere house beats verwachten. EXIT is dé plek die nog open is wanneer de andere kroegen langzaam sluiten. Het EXIT Café is onderdeel van Club NYX." ;
+	nl:trcid "41ce60b6-bf7a-4eca-bceb-9177133610b3" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#FeestvanJoop
+
+nl:FeestvanJoop a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Lange Leidsedwarsstraat 39" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3641030" ;
+	nl:Locatienaam "Feest van Joop" ;
+	nl:Longitude "4,8845690" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/80/80aa7a48-163b-4dbb-96d5-ec4db64261db/ed4419e3-7da3-4709-8520-18b377a07763.jpg" ;
+	nl:ShortdesEN "Party until the wee hours at this popular Amsterdam night spot. Open seven nights a week until late, Feest van Joop is a long time favourite among young locals and visitors alike, where resident DJs spin party tunes to keep the fun going until sunrise." ;
+	nl:TitleEN "Feest van Joop" ;
+	nl:Url "http://www.hetfeestvanjoop.nl/" ;
+	nl:Zipcode "1017 NG" ;
+	nl:shortdesc "Het Feest van Joop vlakbij het Rembrandtplein in Amsterdam staat al jaren bekend als dé plek waar je tot laat kunt feesten. Niet gek met zo'n naam Zeven dagen per week geopend, met vaste dj's die ervoor zorgen dat je danst tot de zon weer opkomt. " ;
+	nl:trcid "80aa7a48-163b-4dbb-96d5-ec4db64261db" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Floor17
+
+nl:Floor17 a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Staalmeesterslaan 410" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3681310" ;
+	nl:Locatienaam "Floor17" ;
+	nl:LongdesEN "Richard Matulessy, former head chef at the Amstel Hotel, now runs the kitchen here. You can enjoy his creations seven days a week at lunch or dinner. Floor17 also offers an extensive menu of champagnes and cocktails.<br /> <br /> The latest addition to Floor17 is the exclusive Rooftop Terrace, offering drinking, dining and dancing alongside an impressive 360 degree view over Amsterdam &ndash: from 85 metres up" ;
+	nl:Longitude "4,8439990" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20130117/ba8ead0e-133d-4b8d-8647-5753bd32fc48.jpg,https://media.iamsterdam.com/ndtrc/Images/20130117/7cf5b80b-d157-4f24-86e3-44ed3262ac12.jpg" ;
+	nl:ShortdesEN "Quite logically, the Floor17 sky bar is located on the 17th floor of the recently opened Ramada Apollo Amsterdam Centre. Floor17 describes itself as offering ?food entertainment?, combining fine dining with an open kitchen, good music and a great view of the city." ;
+	nl:TitleEN "Floor17" ;
+	nl:Url "http://www.floor17.nl/" ;
+	nl:Zipcode "1057 PH" ;
+	nl:longdesc "In het restaurant van Floor17 zwaait de voormalige chef-kok van het Amstel Hotel, Richard Matulessy, de scepter. Je kunt hier dagelijks terecht voor lunch en diner. Floor17 heeft een uitgebreide champagne- en cocktailkaart en op vrijdagavond draait er een dj. <br /> <br /> Neem vooral ook een kijkje op het exclusieve Rooftop Terras, waar je op 85 meter hoogte een 360&deg: view hebt over Amsterdam" ;
+	nl:shortdesc "Deze skybar zit, hoe verrassend, op de zeventiende verdieping van het Ramada Apollo Amsterdam Centre in Amsterdam West. Geniet hier van ?food entertainment? terwijl je een geweldig uitzicht hebt over Amsterdam." ;
+	nl:trcid "909a4914-51e4-4407-a42b-c70211e0b8f7" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#GayPeople
+
+nl:GayPeople a owl:NamedIndividual , nl:Gay .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Melkweg
+
+nl:Melkweg a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "Lijnbaansgracht 234A" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3647980" ;
+	nl:Locatienaam "Melkweg" ;
+	nl:LongdesEN "<strong>Music at the Melkweg</strong><br /> The Melkweg boasts three outstanding halls to support their varied live music programme. The intimate Oude Zaal plays host to up-and-coming bands while The Max regularly welcomes established names. The latest addition is the Rabozaal: a modern, multifunctional hall connected to the Stadsschouwburg and ideal for seated concerts. <br /> <br /> <strong>The Milky Way</strong><br /> Housed in an old dairy factory, the Melkweg played a major role in 1960s-counterculture Amsterdam. Alongside live music, the location is also home to theatre productions, films, exhibitions and regular dance events." ;
+	nl:Longitude "4,8817350" ;
+	nl:Media "https://media.ndtrc.nl/Images/20121015/85abd189-dd73-4c43-81ca-0c7b9daeba72.jpg,https://media.ndtrc.nl/Images/20121015/20701faf-2502-4b90-9cde-0e611add2ff4.jpg" ;
+	nl:ShortdesEN "Located in the bustling heart of Amsterdam, the Melkweg (Milky Way) is one of the city's leading entertainment venues with two halls, a cinema, a theatre and a cafe - and a varied live programme. " ;
+	nl:TitleEN "Melkweg" ;
+	nl:Url "http://www.melkweg.nl/,http://www.facebook.com/melkwegamsterdam" ;
+	nl:Zipcode "1017 PH" ;
+	nl:shortdesc "De Melkweg is één van de bekendste poppodia van Nederland en daarbuiten. Het bijzondere aan de Melkweg is de programmering. Vijf kunstdisciplines worden onder één dak verenigd: muziek, dans/theater, film, fotografie en mediakunst, waarvoor in vijf zalen en enkele kleine ruimtes concerten, dance-events, theater- en dansvoorstellingen, filmvoorstellingen, mediakunstpresentaties en foto-exposities worden georganiseerd." ;
+	nl:trcid "2dc3feee-2c55-437f-a4ea-6671f9fa9da9" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Montmartre
+
+nl:Montmartre a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Halvemaansteeg 17" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3665520" ;
+	nl:Locatienaam "Montmartre" ;
+	nl:Longitude "4,8959510" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120522/6800dfee-3f15-4f78-831b-03850ec51722.jpg" ;
+	nl:ShortdesEN "Café Montmartre is located just around the corner of the Rembrandt-square and was voted best GAY bar for years, so do you wanna have fun?" ;
+	nl:TitleEN "Montmartre" ;
+	nl:Url "http://www.cafemontmartre.nl/" ;
+	nl:Zipcode "1017 CR" ;
+	nl:shortdesc "Montmartre is ondanks de Franse naam een echt Hollands heterovriendelijk gay café. Het interieur is bruin met glitter en kerstversiering, het drankje van het huis is ?Heugemeug?." ;
+	nl:trcid "ac21cf14-a68f-4f97-b168-9cdd1cfbbe6b" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#NJOY
+
+nl:NJOY a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Korte Leidsedwarsstraat 93" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3632470" ;
+	nl:Longitude "4,8843660" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20140613/55859e8b-c971-4d11-824e-75fd8a1edec4.jpg" ;
+	nl:ShortdesEN "This cocktail bar close to Leidseplein offers a wide range of delicious drinks made from premium spirits, fresh fruits, juices and spirit infusions, all served in a slick interior. The menu is organised according to different ?personalities? such as ?The Alchemist?, ?The Trendsetter? or ?The Dreamer?. Spirit tastings and cocktail workshops are available upon request." ;
+	nl:TitleEN "NJOY" ;
+	nl:Url "http://www.njoycocktails.com/" ;
+	nl:Zipcode "1017 PX" ;
+	nl:calendar "Ma-do: 17:00 - 03:00 uur, vr: 16:00 - 04:00 uur, za: 17:00 - 04:00 uur, zo: 17:00 - 03:00 uur." ;
+	nl:shortdesc "Deze hippe cocktailbar, vlakbij het Leidseplein, heeft een enorm aanbod aan heerlijke drankjes gemaakt met de beste alcohol, vers fruit, sappen en huisgemaakte siropen. Of je nou voor ?The Alchemist?, ?The Trendsetter? of ?The Dreamer? gaat: de professionele bartenders stellen je nooit teleur. Drankproeverijen en cocktailworkshops zijn beschikbaar op aanvraag." ;
+	nl:trcid "3bbb70e4-0148-4a97-be73-19cc4625ff2a" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Normal
+
+nl:Normal a owl:NamedIndividual , nl:Normal .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Oosterbar
+
+nl:Oosterbar a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:PlaysMusic nl:Techno ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Mauritskade 57" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3607570" ;
+	nl:Locatienaam "Oosterbar" ;
+	nl:LongdesEN "<h2>Cocktail bar at Generator Amsterdam</h2> <p>Travellers come from far and wide for a taste of Amsterdam&rsquo:s nightlife, and Oosterpark is the perfect location to kick off the festivities. Oosterbar on the ground floor of Generator hostel has a fun, friendly and vibrant vibe, serving cold beer and premium cocktails. </p>" ;
+	nl:Longitude "4,9188430" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/83/83b0c063-6ba0-427d-a148-40fd7e134253/d0c889d9-90c4-488f-ba89-e64d4ffd4385.jpg,https://media.iamsterdam.com/ndtrc/Images/83/83b0c063-6ba0-427d-a148-40fd7e134253/4d4beee1-7603-49a5-8b96-23e506a1dce2.jpg" ;
+	nl:ShortdesEN "Globally recognised as the hip alternative to a hotel, Generator hostel is the accommodation of choice for Amsterdam party-goers. Now the night begins in its recently opened bar, Oosterbar, which keeps the cocktails flowing and tunes playing until the early hours. " ;
+	nl:TitleEN "Oosterbar" ;
+	nl:Url "http://www.oosterbar.com/" ;
+	nl:Zipcode "1092 AD" ;
+	nl:calendar "Vr, za: 10:00 - 04:00 uur." ;
+	nl:shortdesc "Gevestigd in de kelder van een voormalig Universiteitsgebouw in het Oosterpark kun je bij de Oosterpark tot in de late uurtjes drinken en dansen op een mix van urban en house beats." ;
+	nl:trcid "83b0c063-6ba0-427d-a148-40fd7e134253" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Packed
+
+nl:Packed a owl:NamedIndividual , nl:Packed .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Palladium
+
+nl:Palladium a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Kleine-Gartmanplantsoen 7" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3628110" ;
+	nl:Locatienaam "Palladium" ;
+	nl:Longitude "4,8834810" ;
+	nl:TitleEN "Palladium" ;
+	nl:Url "http://www.palladiumamsterdam.nl/" ;
+	nl:Zipcode "1017 RP" ;
+	nl:shortdesc "Palladium zit om de hoek van het Leidseplein en heeft een licht en strak interieur met een grote glazen serre van waaruit het fijn mensen kijken is. Op de roestvrijstalen designstoeltjes zitten bankmedewerkers, hoogblonde vrouwen, gebodybuilde mannen en voetballers met flessen wijn. Achterin wordt goed gegeten: van kreeft en tonijnsashimi tot risotto en steak tartare met friet. Op zondag is er live muziek." ;
+	nl:trcid "38d572a4-f269-4131-8633-dd0049f25fa7" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Panama
+
+nl:Panama a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "Oostelijke Handelskade 4" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3749310" ;
+	nl:Locatienaam "Panama" ;
+	nl:LongdesEN "This cool nightclub and event space can host up to 1,050 people, with a high quality sound installation and various options for catering to VIP guests. Its relaxed and classy club nights offer a chance to hear world-renowned DJs and upcoming talent, such as Mark Knight, Steve Lawler, Hernan Cattaneo, Nick Warren, Ferry Corsten, Danny Tenaglia, Sharam, Joel Mull and Sebastien Leger.<br /> <br /> <h2>Unlimited entry for seven days with the Amsterdam Nightlife Ticket</h2> <br /> Panama is one of the Amsterdam clubs participating in the <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam/nightlife-ticket&quot:>Amsterdam Nightlife Ticket</a>. This handy nightlife pass will get you unlimited entry to a selection of Amsterdam clubs for seven days, plus free drinks at many participating venues. And all for just 10 euro Find out more about the <a href=&quot:http://www.iamsterdam.com/en/visiting/whats-on/clubbing-nightlife-amsterdam/nightlife-ticket&quot:>Amsterdam Nightlife Ticket</a> and buy yours today.<br /> <br /> <h2>How to get there</h2> Tram 10, 26. This information is subject to change: for up-to-date public transport info check the <a href=&quot:http://en.gvb.nl&quot:>GVB website</a>" ;
+	nl:Longitude "4,9303090" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/ed/ed33f772-1506-429e-b5cc-bfa326db426b/a45fcbc7-6252-4684-a4f2-663ba95bd12a.jpg" ;
+	nl:ShortdesEN "Club Panama is a nightclub located in a historic and atmospheric building in Amsterdam's Oostelijk Havengebied (Eastern Docklands), playing host to live music and popular club evenings. " ;
+	nl:TitleEN "Panama" ;
+	nl:Url "http://www.panama.nl/" ;
+	nl:Zipcode "1019 BM" ;
+	nl:longdesc "De club kan plek bieden aan 1.050 mensen, beschikt over een hoge kwaliteit geluidsinstallatie en heeft verschillende opties voor VIP-gasten. Op de intieme en relaxte clubavonden maak je kennis met&nbsp:opkomend talent en&nbsp:beroemde dj's uit binnen-en buitenland, zoals&nbsp:Mark Knight, Steve Lawler, Hernan Cattaneo, Nick Warren, Ferry Corsten, Danny Tenaglia, Sharam, Joel Mull en Sebastien Leger.<br /> <br /> <h2>Openbaar vervoer</h2> Tram 10, 26. Deze informatie is onder voorbehoud. Kijk op de website van <a href=&quot:http://www.gvb.nl&quot:>GVB</a> voor de meest recente informatie." ;
+	nl:shortdesc "Panama* is een nachtclub in een historisch gebouw in Amsterdam's Oostelijk Havengebied, waar je terecht kunt voor live muziek en populaire clubavonden. " ;
+	nl:trcid "ed33f772-1506-429e-b5cc-bfa326db426b" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Papeneiland
+
+nl:Papeneiland a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Prinsengracht 2" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3804500" ;
+	nl:Longitude "4,8881170" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/10/10977bdb-b449-4eee-9213-d1e1c3689485/c3b611b5-1507-43be-bbec-086bbd8ab7f1.jpg,https://media.iamsterdam.com/ndtrc/Images/10/10977bdb-b449-4eee-9213-d1e1c3689485/e719fb9c-1cb0-4f0b-b9dd-d058b7c531b2.jpg" ;
+	nl:ShortdesEN "Nestled on the edge of the Jordaan neighbourhood of Amsterdam, this brown café is located in a beautiful gabled property dating back to 1642. It?s alleged that a coffin-maker and funeral director sold alcohol here on the side as early as 1600." ;
+	nl:TitleEN "Papeneiland" ;
+	nl:Url "http://www.papeneiland.nl/" ;
+	nl:Zipcode "1015 DV" ;
+	nl:calendar "ma-do: 11:00 - 01:00 uur vr, za: 11:00 - 02:00 uur zo: 11:00 - 01:00 uur" ;
+	nl:shortdesc "Café Papeneiland op de hoek Prinsengracht/Brouwersgracht is een van de oudste cafés van Amsterdam. Het café uit 1642 is donkerbruin met prachtige hoge ramen, een Anton Pieck van het pand aan de muur, een oude, beschilderde tap, Perzisch tapijt op tafel, Delfts blauwe tegeltjes, een antieke kachel. Het publiek van dit historische café bestaat uit een harde kern van vrolijke drinkers van middelbare leeftijd en een handvol toeristen." ;
+	nl:trcid "10977bdb-b449-4eee-9213-d1e1c3689485" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Players
+
+nl:Players a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Warmoesstraat 170" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3736590" ;
+	nl:Locatienaam "Players" ;
+	nl:Longitude "4,8954610" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120522/85acc777-058a-4dc7-b6e9-c50b2be477c6.jpg" ;
+	nl:ShortdesEN "Players can be found just around the corner from Dam Square on the famous Warmoesstraat, it is the perfect venue for those who like to watch their sports and follow up with a party night. The bar screens all major sporting events live on state of the art big screens. Other perks include three pool tables, a dance floor and a great selection of beers and spirits, as you would expect, the service is top notch. Don?t leave without trying one of their famous shooters. Players stays open until 3am on weekdays and 4 am at weekends." ;
+	nl:TitleEN "Players" ;
+	nl:Url "http://www.amsterdam-dam.com/players/" ;
+	nl:Zipcode "1012 JK" ;
+	nl:longdesc "Andere pluspunten zijn de drie pooltafels, een dansvloer en een wijde selectie aan bieren en gedistilleerde dranken, ga vooral niet weg zonder eerst een van hun beroemde shooters te proberen. De DJ&rsquo:s zijn een ware trekpleister en zoals altijd is de service perfect. Players is doordeweeks open tot 03.00 en in het weekend zelfs tot 04.00." ;
+	nl:shortdesc "Players bevindt zich net om de hoek van de Dam, in de Warmoesstraat en is het perfecte café om eerst de sportwedstrijden te kijken en de avond te vervolgen met een feestje. Alle grote sportwedstrijden en ?evenementen worden live vertoond op de grote tv-schermen." ;
+	nl:trcid "128e9cee-5fbf-4dae-9b67-3a7b5c274315" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Pop
+
+nl:Pop a owl:NamedIndividual .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Quite
+
+nl:Quite a owl:NamedIndividual , nl:Quite .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#RandB
+
+nl:RandB a owl:NamedIndividual , nl:RandB .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Reality
+
+nl:Reality a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer , nl2:Cocktail ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Reguliersdwarsstraat 129" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3658520" ;
+	nl:Locatienaam "Reality" ;
+	nl:Longitude "4,8952270" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20121204/3ebf3a76-d67f-4063-a268-63fdd0c01103.jpg" ;
+	nl:ShortdesEN "This popular gay bar located at the Rembrandtplein end of the Reguliersdwarsstraat is known for bringing a touch of the tropics to Amsterdam. Latin music is normally the order of the day at this small bar which typically caters to Surinamese and Antillean clientele." ;
+	nl:TitleEN "Reality" ;
+	nl:Zipcode "1017 BL" ;
+	nl:shortdesc "Deze populaire homobar zit op het Rembrandtplein aan het einde van de Reguliersdwarsstraat en brengt de tropen een beetje naar Amsterdam. Latin muziek klinkt hier uit de boxen en Surinamers en Antilianen behoren bij Reality tot de vaste clientèle." ;
+	nl:trcid "a556726c-2a1f-4be6-aeea-efd0010a5ed8" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Shelter
+
+nl:Shelter a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Overhoeksplein 1" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3844190" ;
+	nl:Locatienaam "Shelter" ;
+	nl:LongdesEN "<h2>Home of quality dance music in Amsterdam</h2> <br /> Welcoming seasoned clubbers and enthusiastic newcomers alike, Shelter Amsterdam offers a diverse clubbing experience in the Dutch capital - with design, experience and sound quality front of mind.&nbsp:" ;
+	nl:Longitude "4,9024490" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/42/421f0ac1-75ad-4c33-8d63-4a2f3d981170/b98d5f3e-1a47-4138-b1d6-914c06dce50f.jpg" ;
+	nl:ShortdesEN "Shelter is the name of the vast subterranean nightclub and exhibition space located in the basement of the landmark A'DAM Tower on Amsterdam's northern waterfront. " ;
+	nl:TitleEN "Shelter" ;
+	nl:Zipcode "1031 KS" ;
+	nl:shortdesc "In de A'DAM Toren in Amsterdam Noord vind je niet alleen op de hoogste verdiepingen vermaak, ook in de kelder vind je een nachtclub en expositieruimte genaamd Shelter. " ;
+	nl:trcid "421f0ac1-75ad-4c33-8d63-4a2f3d981170" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Studio80
+
+nl:Studio80 a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Rembrandtplein 17" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3663530" ;
+	nl:Locatienaam "Studio 80" ;
+	nl:LongdesEN "<strong>Electro music Mecca </strong><br /> Attracting a musically-minded crowd, the club provides a stage for a host of dance music acts: live bands, DJs, music producers and organisers. And when the night-time tunes aren't pumping, it even runs workshops and seminars for up-and-coming artists. Regular club nights include WKND and Black Box." ;
+	nl:Longitude "4,8977880" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120524/5d9f5e70-7918-453f-b9a6-488c937920a1.jpg" ;
+	nl:ShortdesEN "Located on the lively Rembrandtplein, Studio 80 is the well-established home of a broad spectrum of electronic dance music." ;
+	nl:TitleEN "Studio 80" ;
+	nl:Url "http://www.studio-80.nl/" ;
+	nl:Zipcode "1017 CT" ;
+	nl:shortdesc "Aan de Amstel, aan de achterkant van discotheek Escape, zit Studio 80. Deze club in een voormalige radiostudio is een broedplaats voor jonge muzikanten, producers, dj?s, vj?s, beeldend kunstenaars, schrijvers, filmers, designers en anderen die een bijdrage leveren aan de clubcultuur. Bekijk de programmering op de website want elke avond wordt ingevuld door een ander talent. LET OP: LOCATIE IS GESLOTEN " ;
+	nl:trcid "6ebaed97-2b55-4357-bed3-cf146fb771bc" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Sugarfactory
+
+nl:Sugarfactory a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Average ;
+	nl:Adres "Lijnbaansgracht 238" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3647980" ;
+	nl:LongdesEN "<h2>Multi-purpose club venue in Amsterdam</h2> With its large stage and red velvet curtains, the <strong>Sugarfactory</strong> is a <strong>multi-purpose club venue</strong>. Its main hall doubles as a theatre location &ndash: that is when it isn't staging noisy rock bands or <strong>vibrant club nights</strong>. Following renovation in 2012, the Sugarfactory also features a smaller venue in its former foyer, allowing it to serve as a springboard for up-and-coming talent and new international names." ;
+	nl:Longitude "4,8817350" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120524/c52c44ef-cecf-4bf3-88b4-c3fe57610e93.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/eeda6d2b-c393-4c01-a2c1-2432d265536a.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/cfac69ea-5ef4-4461-8ad5-1a91b8aafac5.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/79019fed-8aee-4b8b-b145-db938909eedb.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/9b880378-6bd9-44e7-8e39-b8ed549d471e.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/1a3a3242-726a-49a4-9e60-9289b0c15783.jpg,https://media.iamsterdam.com/ndtrc/Images/20120524/69c0c673-849b-4e4e-9d4d-f24e45d083b2.jpg" ;
+	nl:ShortdesEN "Amsterdam?s Sugarfactory is a dynamic, open-minded and creative place where club, live music and theatre meet. The club regularly hosts local and international DJs while it also provides a stage for live music, offering the perfect venue for both intimate and larger-scale gigs. " ;
+	nl:TitleEN "Sugarfactory" ;
+	nl:Url "http://www.sugarfactory.nl/,http://www.facebook.com/sugarfactoryamsterdam" ;
+	nl:Zipcode "1017 PH" ;
+	nl:shortdesc "Bij nachttheater Sugarfactory worden kunst, muziek en poëzie geïntegreerd in een nachtomgeving. Dat betekent zoveel als cultureel verantwoord clubben. De ene keer met Wicked Jazz Sounds, een andere avond met de Groove Collector Big Band. Het interieur lijkt een beetje op een nachtclub maar dan niet op een overdadige manier. Het is eerder praktisch: een natuurstenen vloer, eenvoudige tafeltjes met rode tafelkleden en klapstoelen. Door de gevarieerde programmering zitten, drinken en dansen daar steeds andere mensen." ;
+	nl:trcid "889e6368-deac-4793-804e-bc57b738a583" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Taboo
+
+nl:Taboo a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Reguliersdwarsstraat 45" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3660740" ;
+	nl:Locatienaam "Taboo" ;
+	nl:Longitude "4,8934870" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20121204/71c510cd-5ef5-488c-ab0e-1a198afeb87e.jpg" ;
+	nl:ShortdesEN "This popular modern gay bar attracts a mixed crowd of gay and straight visitors with a cosmopolitan blend of young and old, tourists and locals. The bar features two floors, with two large video screens playing classic and new music videos." ;
+	nl:TitleEN "Taboo" ;
+	nl:Url "http://www.taboobar.nl/" ;
+	nl:Zipcode "1017 BK" ;
+	nl:shortdesc "Deze populaire moderne bar trekt zowel homo?s als hetero?s aan. Het publiek is een kosmopolitische mix van jong, oud, toerist en ?local?. Taboo is verdeeld over twee verdiepingen inclusief twee grote videoschermen die nieuwe én klassieke muziekclips vertonen." ;
+	nl:trcid "7c8a435e-6485-48d3-bcc7-5b34457b207f" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Techno
+
+nl:Techno a owl:NamedIndividual , nl:Techno .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TheBox
+
+nl:TheBox a owl:NamedIndividual , nl:HangoutSpots ;
+	nl:Adres "Mekongweg 5" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3902890" ;
+	nl:Locatienaam "The Box" ;
+	nl:LongdesEN "<h2>The ultimate party experience</h2> <p>Lovers of all music genres come together at The BOX. Within the space are several bars and a convenient electronic locker system, which are both operated through the MyChip payment system. You can store your belongings safely and easily, and use the same card to pay for drinks and snacks at the food stand.</p>" ;
+	nl:Longitude "4,8253350" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/48/48628148-c51f-46dd-a9f8-4012686cf8c0/9035a029-7cb4-4570-8b25-1fd21ba16f53.jpg,https://media.iamsterdam.com/ndtrc/Images/48/48628148-c51f-46dd-a9f8-4012686cf8c0/cf137246-876d-49d0-949c-e25faaec8514.jpg,https://media.iamsterdam.com/ndtrc/Images/48/48628148-c51f-46dd-a9f8-4012686cf8c0/560e70d4-616d-487e-8d56-473b9f90f01b.jpg" ;
+	nl:ShortdesEN "The BOX is an impressive event venue in Amsterdam West, which hosts an exciting line-up of events throughout the year. The sensational acoustics and relaxed atmosphere have made it the venue of choice for some of the city?s best concerts and dance events. " ;
+	nl:TitleEN "The Box" ;
+	nl:Url "http://www.the-box.events" ;
+	nl:Zipcode "1043 AE" ;
+	nl:longdesc "<h2>Bezoek The Box in Amsterdam&nbsp:</h2> The Box heeft verschillende bars en voor hongerige bezoekers is er genoeg lekkers te krijgen bij de foodstand. The BOX werkt met een handig MyChip systeem. Met een chipkaart kun je bij foodcorner, bars en toiletten afrekenen. Met de chipkaart open je ook de elektronische lockers, zodat je spullen snel en veilig kunt opbergen." ;
+	nl:shortdesc "Amsterdam heeft er een imposante evenementenlocatie bij: The Box. In deze mooie, grote ruimte in Amsterdam West vinden jaarlijks zo?n 50 publieksevenementen plaats. De goede akoestiek en de ongedwongen sfeer maken The Box tot een perfecte locatie voor concerten en dance events.  " ;
+	nl:trcid "48628148-c51f-46dd-a9f8-4012686cf8c0" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TheWalterWoodburybar
+
+nl:TheWalterWoodburybar a owl:NamedIndividual , nl:HangoutSpots ;
+	nl:Adres "Javastraat 42" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3635140" ;
+	nl:Locatienaam "The Walter Woodbury bar" ;
+	nl:LongdesEN "<h2>How to get there</h2> Tram 3, 7, bus 37, 41. This information is subject to change: for up-to-date public transport info check the <a href=&quot:http://en.gvb.nl&quot:>GVB website</a>." ;
+	nl:Longitude "4,9334480" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/7718411d-8098-4034-8dbe-079e874f024b.jpg,https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/9974367b-6c14-466f-b6aa-a528525f07ac.jpg,https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/c4093f3f-6814-446e-b025-dbfd57b6377f.jpg,https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/9e6b08ca-fe72-4102-9729-72736f2ab7b2.jpg,https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/ac51ffd1-08ad-47d3-ad9a-86a5ed83d435.jpg,https://media.iamsterdam.com/ndtrc/Images/17/17d67d15-855a-49c1-b93b-39daac680b9c/fd4eb00e-e7f9-4295-af3a-d19eca22e441.jpg" ;
+	nl:ShortdesEN "Treat your tastebuds to Ladyboys, Sour Monkeys and crafted gin & tonics, while feasting your eyes on the beautiful Javanese interior." ;
+	nl:TitleEN "The Walter Woodbury bar" ;
+	nl:Url "http://www.walterwoodburybar.nl/" ;
+	nl:Zipcode "1094 HJ" ;
+	nl:calendar "Ma-do: 10:00 - 01:00 uur, vr, za: 10:00 - 03:00 uur, zo: 10:00 - 01:00 uur." ;
+	nl:longdesc "<h2>Openbaar vervoer</h2> Tram 3, 7, bus 37, 41. Deze informatie is onder voorbehoud. Kijk op de website van <a href=&quot:http://www.gvb.nl&quot: target=&quot:blank&quot:>GVB</a> voor de meest recente informatie." ;
+	nl:shortdesc "In deze bar in Amsterdam Oost geniet je van Ladyboys (het drankje ...), Sour Monkeys en andere Gin Tonics terwijl je ondertussen je ogen de kost geeft aan het mooie Javaanse interieur." ;
+	nl:trcid "17d67d15-855a-49c1-b93b-39daac680b9c" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#TheWaterhole
+
+nl:TheWaterhole a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink <http://dbpedia.org/resource/Wine> , nl2:Beer ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Korte Leidsedwarsstraat 49" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3647470" ;
+	nl:Locatienaam "The Waterhole" ;
+	nl:Longitude "4,8825720" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20120524/1a4f5782-cf23-4f19-b086-36b4ccf1d631.jpg" ;
+	nl:TitleEN "The Waterhole" ;
+	nl:Url "http://www.waterhole.nl" ;
+	nl:Zipcode "1017 PW" ;
+	nl:shortdesc "Voor gratis live muziek moet je naar The Waterhole in de Korte Leidsedwarsstraat. In de grote ruimte met meerdere pooltafels staat een podium voor en hangen her en der muziekinstrumenten aan de muur. Dagelijks is hier vanaf elf uur ?s avonds live muziek, veelal van rockbands en het bier staat altijd koud. Eigenlijk is The Waterhole een soort Amerikaanse roadhouse, waar je binnen vijf minuten de lookalikes van Willie Nelson en Billy Idol spot, maar net zo goed een frisse groep meiden aan de bar een fles rosé ziet bestellen." ;
+	nl:trcid "5ec869d6-3088-4863-a960-f07e592fe889" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Trut
+
+nl:Trut a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:ServesDrink nl2:Beer ;
+	nl2:TargetedAudienceIs nl:GayPeople ;
+	nl2:hasCrowdLevel nl:Normal ;
+	nl:Adres "Bilderdijkstraat 165 e" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3677360" ;
+	nl:Locatienaam "Trut" ;
+	nl:Longitude "4,8721360" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20121204/d9cb0b8f-5b30-4754-99c4-34b5757a517b.jpg" ;
+	nl:ShortdesEN "Established in the early 80s as a non-commercial venture, volunteers still play a major role at this popular gay and lesbian bar on the Bilderdijkstraat in Amsterdam West. The club has an underground vibe and visitors are asked to respect a few rules such as leaving their mobile phones turned off." ;
+	nl:TitleEN "Trut" ;
+	nl:Url "http://www.trutfonds.nl/" ;
+	nl:Zipcode "1053 KP" ;
+	nl:shortdesc "Trut begon in de jaren ?80 als een niet-commerciële onderneming in de Bilderdijkstraat in West, en vrijwilligers spelen hier nog steeds een belangrijke rol. De homo & lesbo bar heeft een underground sfeer en is tegenwoordig nog altijd erg geliefd in de Amsterdamse gay scene. Bezoekers moeten zich wel aan enkele regels houden, je moet bijvoorbeeld je mobiel thuis laten." ;
+	nl:trcid "e0f94536-0394-4ee9-b689-070493f29b1d" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#Westergasfabriek
+
+nl:Westergasfabriek a owl:NamedIndividual , nl:HangoutSpots ;
+	nl2:hasCrowdLevel nl:Packed ;
+	nl2:hasTicketPrice nl2:Expensive ;
+	nl:Adres "Haarlemmerweg 8E" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3869940" ;
+	nl:Locatienaam "Westergasfabriek" ;
+	nl:LongdesEN "<h2>Cultural hotspot </h2> The grounds are home to numerous businesses, bars, restaurants, a cinema and a theatre and the renovated industrial buildings and spacious park regularly host events ranging from major club nights to art exhibitions and culinary happenings.<br /> <br /> <h2>How to get there</h2> Tram 10, bus 21. This information is subject to change: for up-to-date public transport info check the <a href=&quot:http://en.gvb.nl&quot:>GVB website</a>" ;
+	nl:Longitude "4,8730370" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20121025/bd75aaaf-d2d3-4dcf-aebd-ff9517afc4fa.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/b8d613e7-686f-4b50-8fe8-1a94564a38e3.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/c33268fe-d553-48c6-a03e-64a01d3fd09d.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/3a79488a-5b0d-47b7-8d69-6140633b4fa2.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/3becd27e-dfa0-475b-9224-37b17cfdc25a.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/b05c8ad0-6e8e-4fa1-9fc4-e7389c232973.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/df8c142f-db6e-40c2-94b1-326d952cbe7c.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/4734980f-6433-473b-9a0b-dbeb47fead60.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/05c2955c-7252-467e-a29b-6c4049e7edd1.jpg,https://media.iamsterdam.com/ndtrc/Images/20121025/103e11a6-dfd7-4bf8-b72a-3e0115ac4ba6.jpg" ;
+	nl:ShortdesEN "A prominent feature in the west of Amsterdam, the Westergasfabriek (a former gas works) is one of the city's thriving creative hotspots." ;
+	nl:TitleEN "Westergasfabriek" ;
+	nl:Url "http://www.westergasfabriek.nl/" ;
+	nl:Zipcode "1014 BE" ;
+	nl:longdesc "Je vindt er groen, een plek om te werken, ruimte voor grote en kleine evenementen en diverse horeca-, film- theater- en expositiegelegenheden. Er vinden ook regelmatig openluchtevenementen en -festivals plaats.<br /> <br /> <h2>Openbaar vervoer</h2> Tram 10, bus 21. Deze informatie is onder voorbehoud. Kijk op de website van <a href=&quot:http://www.gvb.nl&quot:>GVB</a> voor de meest recente informatie." ;
+	nl:shortdesc "De Westergasfabriek exploiteert en programmeert binnen- en buitenruimtes in de Westergasfabriek. De industriële monumenten en het omliggende cultuurpark van de Westergasfabriek vormen samen een multifunctionele ruimte en een modern stadspark van internationale allure." ;
+	nl:trcid "654e2634-1942-497a-9ce4-b01b89c932d7" .
+# 
+# http://www.semanticweb.org/shart/ontologies/nightlife#5and33
+
+nl:5and33 a owl:NamedIndividual , nl:HangoutSpots ;
+	nl:Adres "Martelaarsgracht 5" ;
+	nl:City "AMSTERDAM" ;
+	nl:Latitude "52,3779700" ;
+	nl:LongdesEN "<strong>Innovation in art and design<br /> </strong>In addition to a restaurant, bar and lounge, there is also a library with a broad range of art, culture, design and lifestyle publications. The public gallery at 5&amp:33 offers a full programme of art and events and is free to enter. Running from the ground floor right up to the gallery at a staggering 12 metres high, the interactive art curtain at 5&amp:33 is one of the largest permanent interactive installations in Europe." ;
+	nl:Longitude "4,8970460" ;
+	nl:Media "https://media.iamsterdam.com/ndtrc/Images/20140707/f37531a3-c99a-4de7-b6eb-e2c322be9000.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/4d2419b7-9200-4e7e-996b-e9c66688209a.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/cd5ed015-9c57-412c-a4d0-40be3a803842.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/f36d7e39-cd81-4c54-ba5c-c3fe4844e5e7.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/5ecefc69-a31a-4895-bcc3-387abdd2b3b8.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/cdc954aa-2d74-4a01-994e-5f6dcc8982b6.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/67ad840c-0c98-4235-8c05-4790cdfba212.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/c36a8553-1e8f-4b1c-a48a-125cfb6f2b19.jpg,https://media.iamsterdam.com/ndtrc/Images/20140707/3d71cd04-2839-4286-91dd-c1116fce94b1.jpg,http://www.youtube.com/v/-acPnLcqAGo" ;
+	nl:ShortdesEN "5&33 is a new social meeting place in the historic heart of Amsterdam, mixing together dining, drinks, art, multimedia and relaxation in a fluid, memorable concept. A part of the modern art?otel Amsterdam, 5&33 was named as the best hotel bar in the Netherlands at the Red & Grey Best Hotel Bar Award 2014. " ;
+	nl:TitleEN "5&33" ;
+	nl:Url "http://www.5and33.nl/" ;
+	nl:Zipcode "1012 TN" ;
+	nl:calendar "Ma-vr: 06:30 - 01:00 uur za, zo: 06:30 - 02:00 uur." ;
+	nl:longdesc "<strong>Vernieuwend artistiek concept<br /> </strong>Naast een restaurant, bar en lounge biedt 5&amp:33 een bibliotheek met boeken en bladen over kunst, cultuur, design en lifestyle. Ook is er een openbare galerie, die vrij toegankelijk is en een programma vol kunst en evenementen biedt. Het speciale gordijn van twaalf meter hoog, dat de galerie met de begane grond van het hotel verbindt, is een van de grootste permanente interactieve installaties in Europa." ;
+	nl:shortdesc "5&33 is een nieuwe ontmoetingsplaats in het historische hart van Amsterdam waar je kunt eten en drinken, maar ook genieten van kunst, multimedia en andere vormen van ontspanning. Er treden regelmatig dj?s op, er zijn workshops te volgen en je kunt er de beste cocktails uitproberen. " ;
+	nl:trcid "37e445f0-b84d-4f3b-8f47-b94fe71874a5" .
+# 
+# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
