@@ -1,0 +1,5 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr:	<http://dbpedia.org/resource/> .
+@prefix ns2:	<http://www.semanticweb.org/shart/ontologies/nightlife#> .
+dbr:Vodka	rdf:type	ns2:Beverages .
+dbr:Wine	rdf:type	ns2:Beverages .
