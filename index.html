@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 450px;
+        width: 90%;
+       }
+       table, th, td {
+          border: 1px solid black;
+       }
+       table {
+    border-collapse: collapse;
+    width: 40%
+}
+th{background-color: DimGray ;
+    color: white;
+
+  height: 20px}
+th, td {
+    padding: 15px;}
+
+    .form{
+    float: left;
+    border-collapse: collapse;
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+    border: 3px;
+}
+  .legenda{float: right;
+}
+
+    </style>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script src="http://maps.google.com/maps/api/js?key=AIzaSyBa-PrQhtI-WCEpmjO_i3MV0tH_Zy4ilRg"
+         type="text/javascript"></script>
+<script>
+
+</script>
+
+  </head>
+  <body background="http://clubnyx.nl/wp-content/uploads/2016/10/billybalster.jpg">
+  <div style="color:white">
+    <h1 style="font-size:300%;">NIGHTLIFE AMSTERDAM</h1>
+  </div>
+
+    <p>
+      <div  class="legendaenform"> <form action="#">
+        <div style="color:white">
+        <input id="Nightclub" type="checkbox" name="filter" value="Nightclub" > NIGHTCLUB<br>
+        <input id="CoffeeShop" type="checkbox" name="filter" value="CoffeeShop"  > COFFEESHOP<br>
+        <input id="Bar" type="checkbox" name="filter" value="Bar" > BAR <br>
+        <button type="submit" > SUBMIT </button><br>
+      </div>
+      </form>
+    </div>
+    <style>
+      table, th, td {
+        border: 3px solid black;
+      }
+    </style>
+    <div style="color:black" class="legenda">
+      <table align="right">
+          <tr>
+            <th style="background-color:red">LEGEND</th>
+          </tr>
+          <tr>
+            <th style="background-color:red">COLOR</th>
+            <th>VENUE-Type</th>
+          </tr>
+          <tr>
+            <td style="background-color:yellow">YELLOW</td>
+            <td style="background-color:grey">NIGHTCLUB</td>
+          </tr>
+          <tr>
+            <td style="background-color:purple">PURPLE</td>
+            <td style="background-color:grey">COFFEESHOP</td>
+          </tr>
+          <tr>
+            <td style="background-color:green">GREEN</td>
+            <td style="background-color:grey">BAR</td>
+          </tr>
+      </table>
+    </div>
+    </p>
+    <div id="map"></div>
+    <script>
+
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: new google.maps.LatLng(52.3733713, 4.8689007)});
+
+function barStuff(type){
+  var query ="SELECT ?name ?latitude ?longitude ?shortdescription ?calendar ?adres ?postcode ?stad ?website where {?venue nl:TitleEN ?name. ?venue rdf:type nl:"+type+". ?venue nl:Latitude ?latitude. ?venue nl:Longitude ?longitude. ?venue nl:shortdesc ?shortdescription . OPTIONAL{?venue nl:calendar ?calendar}. OPTIONAL{?venue nl:Adres ?adres}. OPTIONAL{?venue nl:Zipcode ?postcode} . ?venue nl:City ?stad. OPTIONAL{?venue nl:Url ?website}}"
+  var url = "http://localhost:5820/FinalProject2/query?reasoning=true";
+
+  $.ajax({
+    headers :{
+      Accept:'application/sparql-results+json'
+    },
+    url: url,
+    data: {
+      query: query
+    },success: function(data) {
+
+      var results = data.results.bindings;
+
+    ;
+
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    var icons = {
+      Bar: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+      Nightclub: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+      CoffeeShop: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+    }
+
+        for (i = 0; i < results.length; i++) {
+          var position = {
+            lat: parseFloat(results[i]["latitude"]['value'].replace(/,/g, '.')),
+            lng: parseFloat(results[i]["longitude"]['value'].replace(/,/g, '.'))
+          };
+          marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              icon: icons[type]
+            });
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+            infowindow.setContent(results[i]['name']['value'] +"<br>"+ results[i]['shortdescription']['value'] +"<br>"+
+             "<br>"+ results[i]['adres']['value'] +"<br>"+ results[i]['postcode']['value'] +
+            "<br>" + results[i]['stad']['value']);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+        };
+    }
+  });
+
+}
+
+var url = new URL(window.location);
+var params = new URLSearchParams(decodeURIComponent(url.search.slice(1)));
+var filterss = params.getAll('filter')
+for (i = 0; i< filterss.length; i++){
+  if(['Bar', 'Nightclub', 'CoffeeShop'].indexOf(filterss[i]) >= 0){
+    barStuff(filterss[i]);
+    $("#" + filterss[i]).attr('checked', true);
+  }
+
+}
+
+
+    </script>
+
+  </body>
+</html>
